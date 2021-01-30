@@ -1,0 +1,29 @@
+$themecolor1: #918d8d;
+$themecolor2: #615959;
+$themecolortransparent1: #918d8d66;
+$themecolortransparent2: #615959cc;
+
+$textcolor1: #f5eeee;
+$textcolor2: #976971;
+
+.tc1 {
+  color: $textcolor1;
+}
+
+.tc2 {
+  color: $textcolor2;
+}
+
+.bg1 {
+  background-color: $themecolor1;
+}
+.bg2 {
+  background-color: $themecolor2;
+}
+
+.bgt1 {
+  background-color: $themecolortransparent1;
+}
+.bgt2 {
+  background-color: $themecolortransparent2;
+}

@@ -1,0 +1,77 @@
+$bottleheight: 400px;
+$containerheight: 300px;
+$gridgad: 100px;
+
+.wineHeaderText {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.25rem;
+}
+
+#wines {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 4;
+  row-gap: $gridgad;
+}
+
+%wineContainer {
+  position: relative;
+  width: 100vw;
+  height: $containerheight;
+  overflow-y: visible;
+}
+
+.wineRightContainer {
+  @extend %wineContainer;
+  left: 10vw;
+  justify-self: start;
+}
+.wineLeftContainer {
+  @extend %wineContainer;
+  direction: rtl;
+  right: 10vw;
+}
+
+%winePicture {
+  position: relative;
+  top: -$containerheight - ($bottleheight - $containerheight) / 2;
+  height: $bottleheight;
+}
+.wineRightPicture {
+  @extend %winePicture;
+  margin-left: -6vw;
+}
+.wineLeftPicture {
+  @extend %winePicture;
+  margin-right: -6vw;
+}
+
+.wineBg {
+  height: 100%;
+}
+
+%wineContent {
+  position: relative;
+  top: -$containerheight - $bottleheight;
+  height: $bottleheight;
+  // min-width: 200px;
+  width: calc(72vw - 40px);
+  height: $containerheight - 10px;
+  direction: ltr;
+}
+
+.wineRightContent {
+  @extend %wineContent;
+  left: 75px;
+  // left: calc(-20px + 20vw);
+}
+
+.wineLeftContent {
+  @extend %wineContent;
+  text-align: right;
+
+  right: 100px;
+  // right: calc(-20px + 20vw);
+  // margin-right: 8vw;
+}
