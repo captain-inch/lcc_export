@@ -53,7 +53,7 @@ export default class Hero extends Component {
             <div
               key={acc.length}
               id={"coverText" + acc.length}
-              className="b f1 tc1 bgt br3 pa2 coverText"
+              className="b tc1 bgt br3 pa2 coverText"
             >
               {txt}
             </div>
