@@ -18,25 +18,57 @@ export default class Hero extends Component {
   componentDidMount() {
     gsap
       .timeline()
-      .fromTo(
-        "#arrow",
-        { scale: 1, duration: 2 },
-        { scale: 1.2, repeat: -1, duration: 2 }
-      );
+      .to("#arrowDiv", {
+        scale: 1.2,
+        opacity: 0.6,
+        duration: 2,
+        ease: "power2.out",
+      })
+      .to("#arrowDiv", {
+        scale: 1,
+        duration: 2,
+        opacity: 0.2,
+        ease: "power3.in",
+      })
+      .yoyo(true)
+      .repeat(-1);
+    gsap
+      .timeline()
+      .to("#arrow", {
+        scale: 1,
+        duration: 0.3,
+
+        ease: "power1.out",
+      })
+      .to("#arrow", {
+        fill: "white",
+        scale: 0.8,
+        duration: 0.6,
+        opacity: 0.2,
+        ease: "power1.in",
+      })
+      .yoyo(true)
+      .repeat(-1);
     gsap.from(".coverText", { x: "100vw" });
     gsap
       .timeline({
         scrollTrigger: {
           trigger: "#hero",
+          snap: {
+            snapTo: [0, 0.25, 0.55, 0.85],
+            duration: { min: 0.2, max: 1 },
+            ease: "power1",
+            delay: 0,
+          },
           start: 0,
-          end: "+=2000px",
+          end: "+=4000px",
           pin: true,
           scrub: true,
         },
       })
-      .to("#arrow", { opacity: 0 })
+      .to(".arrowContainer", { opacity: 0, duration: 2 })
       .fromTo("#coverText0", { opacity: 0 }, { opacity: 1, duration: 2, x: 0 })
-      .to("#coverText0", { scale: 1.1, duration: 5 })
+      .to("#coverText0", { scale: 1.1, duration: 5 }) // Text displayed
       .to("#coverText0", { x: "-100vw", duration: 4, ease: "power2.in" })
       .fromTo("#coverText1", { opacity: 0 }, { opacity: 1, duration: 2, x: 0 })
       .to("#coverText1", { scale: 1.1, duration: 5 })
@@ -44,7 +76,6 @@ export default class Hero extends Component {
       .fromTo("#coverText2", { opacity: 0 }, { opacity: 1, duration: 2, x: 0 })
       .to("#coverText2", { scale: 1.1, duration: 5 })
       .to("#coverText2", { x: "-100vw", duration: 4, ease: "power2.in" });
-    // setInterval(this.coverTextInterval, this.state.timeout);
   }
   render() {
     return (
@@ -68,20 +99,42 @@ export default class Hero extends Component {
           );
           return acc;
         }, [])}
-        <svg
-          id="arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="white"
-          class="bi bi-arrow-bar-down"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"
-          />
-        </svg>
+        <div className="arrowContainer">
+          <svg
+            id="arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            className="arrow bi bi-chevron-double-down"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+            />
+            <path
+              fillRule="evenodd"
+              d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+            />
+
+            {/* <svg
+            id="arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            className="arrow bi bi-arrow-bar-down"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"
+            />
+          </svg>
+          <div className="arrow" id="arrowDiv" /> */}
+          </svg>
+        </div>
       </div>
     );
   }

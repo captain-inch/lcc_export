@@ -1,24 +1,15 @@
 import { Component } from "react";
 
 class NavListItem extends Component {
-  menuClick = (e) => {
-    // console.log(this.props);
-    try {
-      this.props.refprop.current.scrollIntoView({ behavior: "smooth" }); // SCROLL
-    } catch (err) {
-      console.warn("Unable to scroll to, ref link is probably broken");
-      // console.log(err);
-    }
-    this.props.callback(this.props.route);
-  };
-
   render() {
     return (
       <li>
         <a
           route={this.props.route}
           refprop={this.props.refprop}
-          onClick={(e) => this.menuClick(e)}
+          onClick={(e) =>
+            this.props.callback(e, this.props.refprop.current, this.props.route)
+          }
           className={
             this.props.className +
             (this.props.active === this.props.route

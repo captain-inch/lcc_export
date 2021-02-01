@@ -6,12 +6,23 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuEnabled: true,
+      menuEnabled: false,
     };
   }
-  changeActive = (route) => {
+  menuClick = (e, ref, route) => {
+    // console.log(this.props);
+    if (this.state.menuEnabled) {
+      this.setState({ menuEnabled: false });
+    }
+    try {
+      ref.scrollIntoView({ behavior: "smooth" }); // SCROLL
+    } catch (err) {
+      console.warn("Unable to scroll to, ref link is probably broken");
+      // console.log(err);
+    }
     this.props.callback(route);
   };
+
   expendMenu = () => {
     this.setState({ menuEnabled: !this.state.menuEnabled });
     // console.log("expending", this.state.menuEnabled);
@@ -21,7 +32,7 @@ export default class Navbar extends Component {
     return (
       <nav
         id="navbar"
-        className="bgt1 bgblur z-2 absolute w-100"
+        className="bgt1 bgblur z-2 absolute"
         style={{ position: "fixed", top: 0 }}
       >
         <div className="flex flex-column-m justify-between-l">
@@ -30,7 +41,9 @@ export default class Navbar extends Component {
               className="mr0-m ml0-m h3-m"
               src={logo}
               alt="logo"
-              onClick={() => this.changeActive(this.state.defaultActive)}
+              onClick={(e) =>
+                this.menuClick(e, document.getElementById("root"), "home")
+              }
             ></img>
           </a>
           <div
@@ -63,7 +76,7 @@ export default class Navbar extends Component {
                   route={link.route}
                   refprop={this.props.refs[acc.length]}
                   active={this.props.active}
-                  callback={this.changeActive}
+                  callback={this.menuClick}
                   className="tc1 pointer link dim f4 ma3-l mb0-l mt0-l"
                 />
               );
@@ -79,9 +92,10 @@ export default class Navbar extends Component {
                 <NavListItem
                   key={acc.length}
                   text={link.text}
-                  refprop={link.refprop}
+                  route={link.route}
+                  refprop={this.props.refs[acc.length]}
                   active={this.props.active}
-                  callback={this.changeActive}
+                  callback={this.menuClick}
                   className="tc1 pointer link dim f3"
                 />
               );
