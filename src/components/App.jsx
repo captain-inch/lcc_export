@@ -16,7 +16,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { route: "#home" };
+    let refs = [];
+    for (let i = 0; i < links.length; i++) {
+      refs.push(React.createRef());
+    }
+    this.state = { route: "#home", refs };
     this.routeChange = this.routeChange.bind(this);
   }
   routeChange(r) {
@@ -82,35 +86,32 @@ export default class App extends Component {
   }
   componentDidMount() {
     this.initScrollTriggers();
+    this.state.refs[0].current.scrollTo({ top: -100 }); // SCROLL
   }
 
   render() {
-    let refs = [];
-    for (let i = 0; i < links.length; i++) {
-      refs.push(React.createRef());
-    }
     return (
       <div className="App">
         <Navbar
           callback={this.routeChange}
           links={links}
-          refs={refs}
+          refs={this.state.refs}
           active={this.state.route}
         />
-        <Anchor id="Anchor_home" refprop={refs[0]} />
+        <Anchor id="Anchor_home" refprop={this.state.refs[0]} />
         <Hero timeout={5000} id="home" />
-        <Anchor id="Anchor_wines" refprop={refs[1]} />
-        <Wines refprop={refs[3]} className="wines" />
-        <Anchor id="Anchor_story" refprop={refs[2]} />
+        <Anchor id="Anchor_wines" refprop={this.state.refs[1]} />
+        <Wines refprop={this.state.refs[3]} className="wines" />
+        <Anchor id="Anchor_story" refprop={this.state.refs[2]} />
         <div className="spacer h3 w-100" />
         <Wineyard />
-        <Anchor id="Anchor_team" refprop={refs[3]} />
+        <Anchor id="Anchor_team" refprop={this.state.refs[3]} />
         <div
           style={{ height: "80vh", backgroundColor: "green" }}
           id="team"
           className="f2"
         ></div>
-        <Anchor id="Anchor_contact" refprop={refs[4]} />
+        <Anchor id="Anchor_contact" refprop={this.state.refs[4]} />
         <div
           style={{ height: "50vh", backgroundColor: "lightblue" }}
           id="contact"

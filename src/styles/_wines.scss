@@ -7,19 +7,44 @@ $gridgad: 100px;
   letter-spacing: 0.25rem;
 }
 
-#wines {
+#wineList {
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: 4;
   row-gap: $gridgad;
 }
-
 %wineContainer {
   position: relative;
   width: 100vw;
   height: $containerheight;
   overflow-y: visible;
+}
+.lightboxBg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.dimmed {
+  opacity: 0.4;
+  transition: opacity 0.5s;
+  backdrop-filter: blur(5px);
+}
+
+.notdimmed {
+  opacity: 1;
+  transition: opacity 0.5s;
+  backdrop-filter: blur(5px);
+}
+
+.grow {
+  transform: scale(1.1) 0.5s;
+}
+.ungrow {
+  transform: scale(1) 0.5s;
 }
 
 .wineRightContainer {

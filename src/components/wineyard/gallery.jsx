@@ -14,7 +14,6 @@ export default class MyGallery extends Component {
     this.openLightbox = this.openLightbox.bind(this);
   }
   openLightbox(e) {
-    console.log(e);
     if (!this.state.active) {
       this.setState(
         { active: true, current: e.target, src: e.target.src },

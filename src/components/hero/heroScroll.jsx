@@ -48,6 +48,7 @@ export default class Hero extends Component {
           end: "+=4000px",
           pin: true,
           scrub: true,
+          progress: 0,
         },
       })
       .to(".arrowContainer", { opacity: 0, duration: 2 })
