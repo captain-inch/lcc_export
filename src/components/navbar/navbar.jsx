@@ -67,7 +67,7 @@ export default class Navbar extends Component {
             </svg>
           </div>
           {/*================= DESKTOP MENU =================*/}
-          <ul className="dn mt2-m mb3-m list justify-around tc flex-ns pa0 self-center-l">
+          <ul className="dn mt2-m mb3-m list justify-around tc flex-ns pa1 mr3 self-center-l">
             {this.props.links.reduce((acc, link) => {
               acc.push(
                 <NavListItem

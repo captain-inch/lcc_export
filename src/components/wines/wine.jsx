@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { gsap } from "gsap";
 
 export default class Wine extends Component {
   constructor(props) {

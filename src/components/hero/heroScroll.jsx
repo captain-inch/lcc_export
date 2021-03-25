@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { coverText } from "./hero_content.jsx";
+import { coverText } from "../../content/hero_content.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 import bgvideo from "./../../media/vid/barriques_timewarptestfinal.mov";
+gsap.registerPlugin(ScrollTrigger);
 // import bgvideo from "./../../media/vid/barriques_h.mp4";
 
 export default class Hero extends Component {
@@ -16,22 +16,6 @@ export default class Hero extends Component {
   }
 
   componentDidMount() {
-    gsap
-      .timeline()
-      .to("#arrowDiv", {
-        scale: 1.2,
-        opacity: 0.6,
-        duration: 2,
-        ease: "power2.out",
-      })
-      .to("#arrowDiv", {
-        scale: 1,
-        duration: 2,
-        opacity: 0.2,
-        ease: "power3.in",
-      })
-      .yoyo(true)
-      .repeat(-1);
     gsap
       .timeline()
       .to("#arrow", {

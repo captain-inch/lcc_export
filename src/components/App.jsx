@@ -3,9 +3,10 @@ import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
 import Hero from "./hero/heroScroll.jsx";
 import Wines from "./wines/wines.jsx";
+import Wineyard from "./wineyard/wineyard.jsx";
 import Anchor from "./anchor";
 import "tachyons";
-import { links } from "./navbar/navbar_content.jsx";
+import { links } from "../content/navbar_content.jsx";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,7 +29,6 @@ export default class App extends Component {
     const wines = [1, 2, 3, 4];
     const wineUpPercent = 10;
     const wineContainerSlideXPercent = 20;
-    let i = 0;
     const routes = links.reduce((acc, link) => {
       acc.push(link.route);
       return acc;
@@ -67,7 +67,7 @@ export default class App extends Component {
         .from("#wine" + wine, {
           opacity: 0,
           xPercent:
-            wine % 2 == 1
+            wine % 2 === 1
               ? wineContainerSlideXPercent
               : -wineContainerSlideXPercent, // If wine number is even : left, otherwise right
           duration: 3,
@@ -102,11 +102,8 @@ export default class App extends Component {
         <Anchor id="Anchor_wines" refprop={refs[1]} />
         <Wines refprop={refs[3]} className="wines" />
         <Anchor id="Anchor_story" refprop={refs[2]} />
-        <div
-          style={{ height: "120vh", backgroundColor: "pink" }}
-          id="story"
-          className="f2"
-        ></div>
+        <div className="spacer h3 w-100" />
+        <Wineyard />
         <Anchor id="Anchor_team" refprop={refs[3]} />
         <div
           style={{ height: "80vh", backgroundColor: "green" }}

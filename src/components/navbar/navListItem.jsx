@@ -4,9 +4,10 @@ class NavListItem extends Component {
   render() {
     return (
       <li>
-        <a
+        <span
           route={this.props.route}
-          refprop={this.props.refprop}
+          refprop={"#" + this.props.refprop}
+          href={this.props.route}
           onClick={(e) =>
             this.props.callback(e, this.props.refprop.current, this.props.route)
           }
@@ -18,7 +19,7 @@ class NavListItem extends Component {
           }
         >
           {this.props.text}
-        </a>
+        </span>
       </li>
     );
   }

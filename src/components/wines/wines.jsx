@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Wine from "./wine.jsx";
-import { winesList } from "./wines_content.jsx";
-import { gsap } from "gsap";
+import { winesList } from "../../content/wines_content.jsx";
 
 export default class Wines extends Component {
   constructor(props) {
