@@ -1,23 +1,23 @@
 export const links = [
   { text: "Home", route: "home", active: "home" },
+
   {
-    text: "Our wines",
-    route: "wines",
-    active: "home",
-  },
-  {
-    text: "Our story",
+    text: "Story",
     route: "story",
     active: "home",
   },
   {
-    text: "Our team",
-    route: "team",
+    text: "Wineyard",
+    route: "wineyard",
     active: "home",
   },
-
   {
-    text: "Contact",
+    text: "Wines",
+    route: "wines",
+    active: "home",
+  },
+  {
+    text: "Infos & contact",
     route: "contact",
     active: "home",
   },

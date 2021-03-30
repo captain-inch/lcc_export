@@ -44,8 +44,7 @@ export default class Hero extends Component {
             ease: "power1",
             delay: 0,
           },
-          start: 0,
-          end: "+=4000px",
+
           pin: true,
           scrub: true,
           progress: 0,
@@ -61,6 +60,18 @@ export default class Hero extends Component {
       .fromTo("#coverText2", { opacity: 0 }, { opacity: 1, duration: 2, x: 0 })
       .to("#coverText2", { scale: 1.1, duration: 5 })
       .to("#coverText2", { x: "-100vw", duration: 4, ease: "power2.in" });
+    const videoEl = document.querySelector("#heroVideo");
+    console.log(videoEl);
+    ScrollTrigger.create({
+      // Stops video when out of viewport
+      trigger: "#hero",
+      start: "0 0",
+      end: "100% 0%",
+      onEnter: () => videoEl.play(),
+      onEnterBack: () => videoEl.play(),
+      onLeave: () => videoEl.pause(),
+      onLeaveBack: () => videoEl.pause(),
+    });
   }
   render() {
     return (
@@ -69,7 +80,7 @@ export default class Hero extends Component {
         id="hero"
         className="flex content-center justify-center"
       >
-        <video autoPlay={true} loop={true} muted={true}>
+        <video id="heroVideo" autoPlay={true} loop={true} muted={true}>
           <source src={bgvideo} />
         </video>
         {coverText.reduce((acc, txt) => {

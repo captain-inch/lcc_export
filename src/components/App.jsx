@@ -5,7 +5,6 @@ import Hero from "./hero/heroScroll.jsx";
 import Wines from "./wines/wines.jsx";
 import Wineyard from "./wineyard/wineyard.jsx";
 import Anchor from "./anchor";
-import "tachyons";
 import { links } from "../content/navbar_content.jsx";
 
 import { gsap } from "gsap";
@@ -38,15 +37,18 @@ export default class App extends Component {
       return acc;
     }, []);
     const triggerDown = (id) => {
+      // Action on navbar when scrolling down on an Anchor
       this.setState({ route: id });
     };
     const triggerUp = (id) => {
+      // Action on navbar when scrolling up on an Anchor
       try {
         this.setState({ route: routes[routes.indexOf(id) - 1] });
       } catch {
         console.warn("Error on the sequence of nav items when moving upwards");
       }
     };
+
     routes.map((name) =>
       ScrollTrigger.create({
         trigger: "#Anchor_" + name,
@@ -58,31 +60,31 @@ export default class App extends Component {
           triggerUp(trigger.vars.trigger.split("#Anchor_")[1]), // // Triggers when scrolling up (leaving, going backwards from) a specific section
       })
     );
-    wines.map((wine) =>
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#wine" + wine,
-            start: "top bottom",
-            end: "70% 50%",
-            scrub: true,
-          },
-        })
-        .from("#wine" + wine, {
-          opacity: 0,
-          xPercent:
-            wine % 2 === 1
-              ? wineContainerSlideXPercent
-              : -wineContainerSlideXPercent, // If wine number is even : left, otherwise right
-          duration: 3,
-          ease: "power1",
-        })
-        .from("#wine" + wine + " .winePicture", {
-          opacity: 0,
-          duration: 2,
-          yPercent: wineUpPercent,
-        })
-    );
+    // wines.map((wine) =>
+    //   gsap
+    //     .timeline({
+    //       scrollTrigger: {
+    //         trigger: "#wine" + wine,
+    //         start: "top bottom",
+    //         end: "70% 50%",
+    //         scrub: true,
+    //       },
+    //     })
+    //     .from("#wine" + wine, {
+    //       opacity: 0,
+    //       xPercent:
+    //         wine % 2 === 1
+    //           ? wineContainerSlideXPercent
+    //           : -wineContainerSlideXPercent, // If wine number is even : left, otherwise right
+    //       duration: 3,
+    //       ease: "power1",
+    //     })
+    //     .from("#wine" + wine + " .winePicture", {
+    //       opacity: 0,
+    //       duration: 2,
+    //       yPercent: wineUpPercent,
+    //     })
+    // );
   }
   componentDidMount() {
     this.initScrollTriggers();
@@ -102,7 +104,7 @@ export default class App extends Component {
         <Hero timeout={5000} id="home" />
         <Anchor id="Anchor_wines" refprop={this.state.refs[1]} />
         <Wines refprop={this.state.refs[3]} className="wines" />
-        <Anchor id="Anchor_story" refprop={this.state.refs[2]} />
+        <Anchor id="Anchor_wineyard" refprop={this.state.refs[2]} />
         <div className="spacer h3 w-100" />
         <Wineyard />
         <Anchor id="Anchor_team" refprop={this.state.refs[3]} />

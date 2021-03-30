@@ -2,7 +2,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: Lato, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,21 +22,35 @@ body {
 #navbar {
   width: 100vw;
 }
-.lightbox {
-  /* Default to hidden */
-  display: none;
 
-  /* Overlay entire screen */
+.lightboxImg {
   position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  // top: 50vh;
+  // left: 50vw;
+  // transform: translate(-50%, -50%);
+  max-width: 90vw;
+  max-height: 90vh;
+}
 
-  /* A bit of padding around image */
-  padding: 1em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.25rem;
+  text-align: center;
+}
 
-  /* Translucent background */
-  background: rgba(0, 0, 0, 0.8);
+h1 {
+  font-size: 5rem;
+  text-decoration: underline;
+}
+h2 {
+  font-size: 3.5rem;
+  text-decoration: underline;
+}
+h3 {
+  font-size: 2.5rem;
 }

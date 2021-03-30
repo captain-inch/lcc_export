@@ -1,10 +1,12 @@
+import React, { Component } from "react";
 import MyGallery from "./gallery.jsx";
-const Wineyard = () => {
-  return (
-    <div id="story" className="f2 flex justify-center">
-      <MyGallery targetRowHeight={250} />
-    </div>
-  );
-};
 
-export default Wineyard;
+export default class Wineyard extends Component {
+  render() {
+    return (
+      <div id="wineyard">
+        <MyGallery targetRowHeight={300} />
+      </div>
+    );
+  }
+}
