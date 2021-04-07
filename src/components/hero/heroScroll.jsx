@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { coverText } from "../../content/hero_content.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { bgvideos } from "../../content/bgvideos.jsx";
 import bgvideo from "./../../media/vid/barriques_timewarptestfinal.mov";
 gsap.registerPlugin(ScrollTrigger);
 // import bgvideo from "./../../media/vid/barriques_h.mp4";
@@ -12,10 +13,21 @@ export default class Hero extends Component {
     this.state = {
       textIndex: 0,
       timeout: this.props.timeout ? this.props.timeout : 5000,
+      videoIndex: 0,
+      src: null,
     };
   }
-
+  videoEnded(e) {
+    console.log("video ended, switching video");
+    const newIndex = (this.state.videoIndex + 1) % bgvideos.length;
+    this.setState({ videoIndex: newIndex, src: bgvideos[newIndex] }, () =>
+      console.log(this.state)
+    );
+    e.target.load(); // Reloads data from new video
+    e.target.play(); //
+  }
   componentDidMount() {
+    this.setState({ src: bgvideos[this.state.videoIndex] });
     gsap
       .timeline()
       .to("#arrow", {
@@ -61,16 +73,20 @@ export default class Hero extends Component {
       .to("#coverText2", { scale: 1.1, duration: 5 })
       .to("#coverText2", { x: "-100vw", duration: 4, ease: "power2.in" });
     const videoEl = document.querySelector("#heroVideo");
-    console.log(videoEl);
     ScrollTrigger.create({
       // Stops video when out of viewport
       trigger: "#hero",
       start: "0 0",
       end: "100% 0%",
-      onEnter: () => videoEl.play(),
-      onEnterBack: () => videoEl.play(),
-      onLeave: () => videoEl.pause(),
-      onLeaveBack: () => videoEl.pause(),
+      onEnterBack: () => {
+        videoEl.play();
+        console.log("Entering back ...");
+      },
+      onLeave: () => {
+        videoEl.pause();
+        console.log("Leaving ...");
+      },
+      // onLeaveBack
     });
   }
   render() {
@@ -80,8 +96,14 @@ export default class Hero extends Component {
         id="hero"
         className="flex content-center justify-center"
       >
-        <video id="heroVideo" autoPlay={true} loop={true} muted={true}>
-          <source src={bgvideo} />
+        <video
+          id="heroVideo"
+          autoPlay={true}
+          loop={false}
+          muted={true}
+          onEnded={(e) => this.videoEnded(e)}
+        >
+          <source src={this.state.src} />
         </video>
         {coverText.reduce((acc, txt) => {
           acc.push(

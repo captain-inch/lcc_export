@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
 import Hero from "./hero/heroScroll.jsx";
-import Wines from "./wines/wines.jsx";
+import Story from "./story.jsx";
+import Team from "./team.jsx";
 import Wineyard from "./wineyard/wineyard.jsx";
+import Wines from "./wines/wines.jsx";
+import Contact from "./contact.jsx";
 import Anchor from "./anchor";
 import { links } from "../content/navbar_content.jsx";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -102,23 +104,16 @@ export default class App extends Component {
         />
         <Anchor id="Anchor_home" refprop={this.state.refs[0]} />
         <Hero timeout={5000} id="home" />
-        <Anchor id="Anchor_wines" refprop={this.state.refs[1]} />
-        <Wines refprop={this.state.refs[3]} className="wines" />
-        <Anchor id="Anchor_wineyard" refprop={this.state.refs[2]} />
-        <div className="spacer h3 w-100" />
+        <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
+        <Story />
+        <Anchor id="Anchor_team" refprop={this.state.refs[2]} />
+        <Team />
+        <Anchor id="Anchor_wineyard" refprop={this.state.refs[3]} />
         <Wineyard />
-        <Anchor id="Anchor_team" refprop={this.state.refs[3]} />
-        <div
-          style={{ height: "80vh", backgroundColor: "green" }}
-          id="team"
-          className="f2"
-        ></div>
+        <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
+        <Wines refprop={this.state.refs[3]} className="wines" />
         <Anchor id="Anchor_contact" refprop={this.state.refs[4]} />
-        <div
-          style={{ height: "50vh", backgroundColor: "lightblue" }}
-          id="contact"
-          className="f2"
-        ></div>
+        <Contact />
       </div>
     );
   }
