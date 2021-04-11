@@ -1,16 +1,25 @@
 import React, { Component } from "react";
-// import { storyContent } from "./../content/story_content.jsx";
+import { teamHeader, teamDetail } from "./../content/team_content.jsx";
 export default class Team extends Component {
   render() {
     return (
       <div id="team">
-        <h1>Story</h1>
-        <p className="center tj pa2 pa3-ns mw7 w-100">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa
-          cumque fugiat qui, quis voluptatem inventore enim sit quisquam,
-          deserunt sed, totam accusamus doloremque veritatis voluptatibus. Quasi
-          iusto asperiores itaque.
-        </p>
+        <h1>Team</h1>
+        <h3>{teamHeader.title}</h3>
+        <img className="shadow-3" src={teamHeader.img} alt={teamHeader.title} />
+        <p className="tc">{teamHeader.text}</p>
+        <div className="flex flex-row flex-wrap justify-around">
+          {teamDetail.reduce((acc, val) => {
+            acc.push(
+              <div className="flex flex-column w5 ma2">
+                <h4 className="mt3 mb3">{val.name}</h4>
+                <img className="shadow-3" src={val.img} alt={val.name} />
+                <p className="tj">{val.text}</p>
+              </div>
+            );
+            return acc;
+          }, [])}
+        </div>
       </div>
     );
   }
