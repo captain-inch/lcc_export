@@ -1,18 +1,43 @@
 import React, { Component } from "react";
 import MyGallery from "./gallery.jsx";
 import { wineyard_Content } from "./../../content/wineyard_content.jsx";
-const emphathizeClassname = "b tcem";
-
+import ReadMoreReact from "read-more-react";
+import banner from "./../../media/img/misc/bgbanner.jpg";
+const minimumLength = 100;
+const idealLength = 150;
+const maximumLength = 220;
 export default class Wineyard extends Component {
   render() {
     return (
-      <div id="wineyard">
-        <h1>Wineyard</h1>
+      <div id="wineyard" className="mt5">
+        <div className="flex flex-column items-center">
+          <h1
+            className="tc dib dimBgOut"
+            style={{
+              background: "#ffffffaa",
+              margin: "auto",
+              backdropFilter: "blur(3px)",
+              margin: 0,
+            }}
+          >
+            Wineyard
+          </h1>
+          <div
+            className="w-100"
+            style={{
+              marginTop: "-30px",
+              height: "100px",
+              background: "url(" + banner + ")",
+              backgroundSize: "cover",
+              backgroundRepeat: "repeat-x",
+            }}
+          ></div>
+        </div>
         <h3>Our core values</h3>
-        <div className="flex h8 flex-column flex-wrap justify-around">
+        <div className="flex flex-row flex-wrap justify-around">
           {wineyard_Content.reduce((acc, val) => {
             acc.push(
-              <div className="flex flex-column w5 ma2 items-center">
+              <div className="flex flex-column w5 ma2 items-center dimBg waveBg2">
                 <h4 className="mt3 mb3 h3 flex flex-column justify-center">
                   {val.headerText}
                 </h4>
@@ -20,16 +45,13 @@ export default class Wineyard extends Component {
                   <img className="" src={val.img} alt={val.name} />
                 </div>
                 <p className="tj">
-                  {val.text.reduce((acc, text) => {
-                    acc.push(
-                      text.highlight ? (
-                        <span className={emphathizeClassname}>{text.text}</span>
-                      ) : (
-                        text.text
-                      )
-                    );
-                    return acc;
-                  }, [])}
+                  <ReadMoreReact
+                    text={val.text}
+                    min={minimumLength}
+                    ideal={idealLength}
+                    max={maximumLength}
+                    readMoreText="[...] Read more"
+                  />
                 </p>
               </div>
             );

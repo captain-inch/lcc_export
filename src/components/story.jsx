@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { storyContent } from "./../content/story_content.jsx";
-const emphathizeClassname = "b tcem";
 export default class Story extends Component {
   render() {
     return (
@@ -10,7 +9,7 @@ export default class Story extends Component {
           {storyContent.reduce((acc, val) => {
             acc.push(
               val.highlight ? (
-                <span className={emphathizeClassname}>{val.text}</span>
+                <span className="emphathize">{val.text}</span>
               ) : (
                 val.text
               )

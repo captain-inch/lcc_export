@@ -6,8 +6,16 @@ export default class Team extends Component {
       <div id="team">
         <h1>Team</h1>
         <h3>{teamHeader.title}</h3>
-        <img className="shadow-3" src={teamHeader.img} alt={teamHeader.title} />
-        <p className="tc">{teamHeader.text}</p>
+        <div className="flex flex-column justify-center">
+          <img
+            className="shadow-3"
+            style={{ margin: "auto auto" }}
+            src={teamHeader.img}
+            alt={teamHeader.title}
+          />
+        </div>
+
+        <p className="tc f3">{teamHeader.text}</p>
         <div className="flex flex-row flex-wrap justify-around">
           {teamDetail.reduce((acc, val) => {
             acc.push(
