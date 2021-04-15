@@ -6,7 +6,7 @@ export default class Team extends Component {
     return (
       <div id="team">
         <h1>Infos & Contact</h1>
-        <div className="flex flex-row flex-wrap justify-around mb4">
+        <div className="center flex flex-row flex-wrap justify-around mb4 mw8">
           {content.reduce((acc, val) => {
             acc.push(
               <div className="flex flex-column w5 ma2 items-center dimBg waveBg2">
