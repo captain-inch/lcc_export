@@ -96,7 +96,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="App">
         <Navbar
           callback={this.routeChange}
           links={links}

@@ -4,8 +4,20 @@ import { content } from "./../content/contact_content.jsx";
 export default class Team extends Component {
   render() {
     return (
-      <div id="team">
+      <div id="contact">
         <h1>Infos & Contact</h1>
+
+        <div className="flex justify-center mb4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6794436.4272035565!2d0.7191798936964178!3d48.77375954950629!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb14e25b3a5ea9c02!2sDomaine%20Les%20Combes%20Cach%C3%A9es!5e1!3m2!1sfr!2sfr!4v1618484617877!5m2!1sfr!2sfr"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+
         <div className="center flex flex-row flex-wrap justify-around mb4 mw8">
           {content.reduce((acc, val) => {
             acc.push(
