@@ -10,7 +10,7 @@ export default class Wine extends Component {
       <div id={"wine" + this.props.id} className="relative h5 w-100 ">
         <div
           className={
-            "waveBg w-90-l w-100-m w-100 h-100 absolute " +
+            "waveBg dimBg w-90-l w-100-m w-100 h-100 absolute " +
             (this.state.side ? "left-0-l right-1-m" : "right-0-l left-1-m")
           }
         >

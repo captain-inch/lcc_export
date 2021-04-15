@@ -1,6 +1,5 @@
 import { Component } from "react";
-import NavListItem from "./navListItem.jsx";
-import logo from "./../../media/img/logo2.png";
+import { NavListItem, logo } from "./navListItem.jsx";
 
 export default class Story extends Component {
   constructor(props) {

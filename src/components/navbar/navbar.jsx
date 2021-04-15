@@ -1,6 +1,5 @@
 import { Component } from "react";
 import NavListItem from "./navListItem.jsx";
-import logo from "./../../media/img/logo2.png";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -39,8 +38,8 @@ export default class Navbar extends Component {
           <a href="#home" className="flex-m justify-center-m">
             <img
               className="mr0-m ml0-m h3-m"
-              src={logo}
-              alt="logo"
+              src={this.props.logo}
+              alt="Logo Domaine Michelin"
               onClick={(e) =>
                 this.menuClick(e, document.getElementById("root"), "home")
               }

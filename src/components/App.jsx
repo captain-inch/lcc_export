@@ -9,7 +9,7 @@ import Wineyard from "./wineyard/wineyard.jsx";
 import Wines from "./wines/wines.jsx";
 import Contact from "./contact.jsx";
 import Anchor from "./anchor";
-import { links } from "../content/navbar_content.jsx";
+import { links, logo } from "../content/navbar_content.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -102,6 +102,7 @@ export default class App extends Component {
           links={links}
           refs={this.state.refs}
           active={this.state.route}
+          logo={logo}
         />
         <Anchor id="Anchor_home" refprop={this.state.refs[0]} />
         <Hero timeout={5000} id="home" arrowTarget={this.state.refs[1]} />
