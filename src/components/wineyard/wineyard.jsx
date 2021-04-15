@@ -15,7 +15,6 @@ export default class Wineyard extends Component {
           trigger: "#wineyardtitle",
           start: "50% 90%",
           end: "50% 10%",
-          markers: true,
           scrub: true,
         },
       })
