@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lcc_export/static/css/main.aef0c16f.chunk.css",
-    "main.js": "/lcc_export/static/js/main.1f84defc.chunk.js",
-    "main.js.map": "/lcc_export/static/js/main.1f84defc.chunk.js.map",
+    "main.js": "/lcc_export/static/js/main.1a7d8daf.chunk.js",
+    "main.js.map": "/lcc_export/static/js/main.1a7d8daf.chunk.js.map",
     "runtime-main.js": "/lcc_export/static/js/runtime-main.c0fa522e.js",
     "runtime-main.js.map": "/lcc_export/static/js/runtime-main.c0fa522e.js.map",
     "static/css/2.31461e4f.chunk.css": "/lcc_export/static/css/2.31461e4f.chunk.css",
@@ -19,6 +19,7 @@
     "static/media/cellar.ae690163.jpg": "/lcc_export/static/media/cellar.ae690163.jpg",
     "static/media/francois.cfa0d6ad.jpg": "/lcc_export/static/media/francois.cfa0d6ad.jpg",
     "static/media/fred.00dd95f1.jpg": "/lcc_export/static/media/fred.00dd95f1.jpg",
+    "static/media/logo_confreriedesdomaines.7319dd13.png": "/lcc_export/static/media/logo_confreriedesdomaines.7319dd13.png",
     "static/media/making.f19764a7.jpg": "/lcc_export/static/media/making.f19764a7.jpg",
     "static/media/michel.8888e178.jpg": "/lcc_export/static/media/michel.8888e178.jpg",
     "static/media/organic.88c02959.jpg": "/lcc_export/static/media/organic.88c02959.jpg",
@@ -37,6 +38,6 @@
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.e40cc6c3.chunk.js",
     "static/css/main.aef0c16f.chunk.css",
-    "static/js/main.1f84defc.chunk.js"
+    "static/js/main.1a7d8daf.chunk.js"
   ]
 }
