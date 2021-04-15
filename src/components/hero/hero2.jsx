@@ -2,35 +2,54 @@ import React, { Component } from "react";
 import { coverText } from "../../content/hero_content2.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { bgvideos } from "../../content/bgvideos.jsx";
 import bgvideo from "./../../media/vid/barriques_timewarptestfinal.mov";
 import Typical from "react-typical";
-
+import Loader from "react-loader-spinner";
+// import { bgvideos } from "../../content/bgvideos.jsx";
+const body = document.querySelector("body");
 gsap.registerPlugin(ScrollTrigger);
 // import bgvideo from "./../../media/vid/barriques_h.mp4";
 
 export default class Hero extends Component {
   constructor(props) {
+    gsap.to(body, { overflow: "hidden" }, 0);
     super(props);
     this.state = {
-      textIndex: 0,
       timeout: this.props.timeout ? this.props.timeout : 5000,
       videoIndex: 0,
       src: null,
+      loaded: false,
+      bgvideos: [],
+      videoEl: null,
     };
     this.handleClickArrow = this.handleClickArrow.bind(this);
+    this.loadVideos().then((bgvideos) => {
+      this.setState({
+        loaded: true,
+        bgvideos,
+        src: bgvideos[this.state.videoIndex],
+      });
+      gsap.to(body, { overflow: "auto" }, 0);
+      this.initTriggers();
+      console.log("Loading complete");
+    });
+  }
+  async loadVideos() {
+    const { bgvideos } = await import("../../content/bgvideos.jsx");
+    this.setState({ bgvideos });
+    return bgvideos;
   }
   videoEnded(e) {
     console.log("video ended, switching video");
-    const newIndex = (this.state.videoIndex + 1) % bgvideos.length;
-    this.setState({ videoIndex: newIndex, src: bgvideos[newIndex] }, () =>
-      console.log(this.state)
+    const newIndex = (this.state.videoIndex + 1) % this.state.bgvideos.length;
+    this.setState(
+      { videoIndex: newIndex, src: this.state.bgvideos[newIndex] },
+      () => console.log(this.state)
     );
     e.target.load(); // Reloads data from new video
     e.target.play(); //
   }
-  componentDidMount() {
-    this.setState({ src: bgvideos[this.state.videoIndex] });
+  initTriggers() {
     gsap
       .timeline()
       .to("#arrow", {
@@ -48,19 +67,23 @@ export default class Hero extends Component {
       })
       .yoyo(true)
       .repeat(-1);
-    const videoEl = document.querySelector("#heroVideo");
+    this.setState({ videoEl: document.querySelector("#heroVideo") });
     ScrollTrigger.create({
       // Stops video when out of viewport
       trigger: "#hero",
       start: "0 0",
       end: "100% 0%",
       onEnterBack: () => {
-        videoEl.play();
-        console.log("Entering back ...");
+        try {
+          this.state.videoEl.play();
+          console.log("Entering back ...");
+        } catch (e) {}
       },
       onLeave: () => {
-        videoEl.pause();
-        console.log("Leaving ...");
+        try {
+          this.state.videoEl.pause();
+          console.log("Leaving ...");
+        } catch (e) {}
       },
       // onLeaveBack
     });
@@ -71,7 +94,7 @@ export default class Hero extends Component {
     });
   }
   render() {
-    return (
+    return this.state.loaded ? (
       <div
         ref={this.props.refprop}
         id="hero"
@@ -115,6 +138,16 @@ export default class Hero extends Component {
             />
           </svg>
         </div>
+      </div>
+    ) : (
+      <div id="hero" className="">
+        <Loader
+          type="TailSpin"
+          color="#cccccc"
+          className="loader"
+          height={100}
+          width={100}
+        />
       </div>
     );
   }

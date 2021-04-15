@@ -4,7 +4,7 @@ import {
   teamDetail,
   storyContent,
 } from "./../content/story_content.jsx";
-export default class Team extends Component {
+export default class Story extends Component {
   render() {
     return (
       <div id="story">
@@ -22,7 +22,9 @@ export default class Team extends Component {
           {storyContent.reduce((acc, val) => {
             acc.push(
               val.highlight ? (
-                <span className="emphathize">{val.text}</span>
+                <span className="emphathize" key={acc.length}>
+                  {val.text}
+                </span>
               ) : (
                 val.text
               )
@@ -33,7 +35,7 @@ export default class Team extends Component {
         <div className="flex flex-row flex-wrap justify-around">
           {teamDetail.reduce((acc, val) => {
             acc.push(
-              <div className="flex flex-column w5 ma2">
+              <div key={acc.length} className="flex flex-column w5 ma2">
                 <h4 className="mt3 mb3">{val.name}</h4>
                 <img className="shadow-3" src={val.img} alt={val.name} />
                 <p className="tj">{val.text}</p>

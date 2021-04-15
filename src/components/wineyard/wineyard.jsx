@@ -3,19 +3,53 @@ import MyGallery from "./gallery.jsx";
 import { wineyard_Content } from "./../../content/wineyard_content.jsx";
 import ReadMoreReact from "read-more-react";
 import banner from "./../../media/img/misc/bgbanner.jpg";
+import gsap from "gsap";
 const minimumLength = 100;
 const idealLength = 150;
 const maximumLength = 220;
 export default class Wineyard extends Component {
+  componentDidMount() {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#wineyardtitle",
+          start: "50% 90%",
+          end: "50% 10%",
+          markers: true,
+          scrub: true,
+        },
+      })
+      .from(
+        "#wineyardtitle",
+        {
+          scale: 0.9,
+          opacity: 0,
+          duration: 2,
+          yPercent: 30,
+          ease: "power3.out",
+        },
+        0
+      )
+      .from(
+        "#wineyardbanner",
+        {
+          scale: 1.2,
+          duration: 2,
+          yPercent: -10,
+          ease: "power2.out",
+        },
+        0
+      );
+  }
   render() {
     return (
       <div id="wineyard" className="mt5">
         <div className="flex flex-column items-center">
           <h1
-            className="tc dib dimBgOut"
+            className="tc dib dimBgOut z-5"
+            id="wineyardtitle"
             style={{
               background: "#ffffffaa",
-              margin: "auto",
               backdropFilter: "blur(3px)",
               margin: 0,
             }}
@@ -24,6 +58,7 @@ export default class Wineyard extends Component {
           </h1>
           <div
             className="w-100"
+            id="wineyardbanner"
             style={{
               marginTop: "-30px",
               height: "100px",
@@ -37,14 +72,17 @@ export default class Wineyard extends Component {
         <div className="flex flex-row flex-wrap justify-around">
           {wineyard_Content.reduce((acc, val) => {
             acc.push(
-              <div className="flex flex-column w5 ma2 items-center dimBg waveBg2">
+              <div
+                key={acc.length}
+                className="flex flex-column w5 ma2 items-center dimBg waveBg2"
+              >
                 <h4 className="mt3 mb3 h3 flex flex-column justify-center">
                   {val.headerText}
                 </h4>
                 <div className="w5 h5 overflow-hidden flex flex-column justify-center">
                   <img className="" src={val.img} alt={val.name} />
                 </div>
-                <p className="tj">
+                <div className="tj">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}
@@ -52,7 +90,7 @@ export default class Wineyard extends Component {
                     max={maximumLength}
                     readMoreText="[...] Read more"
                   />
-                </p>
+                </div>
               </div>
             );
             return acc;

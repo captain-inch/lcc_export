@@ -29,6 +29,36 @@ export const winesList = [
       "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original. ",
     img: im2,
   },
+  {
+    headerText: "Minervois La Livinière - Les 3 écus",
+    text:
+      "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
+    img: im1,
+  },
+  {
+    headerText: "Minervois La Livinière - Les 3 écus",
+    text:
+      "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
+    img: im1,
+  },
+  {
+    headerText: "Minervois Blanc - Combe Violon",
+    text:
+      "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original.",
+    img: im2,
+  },
+  {
+    headerText: "Minervois La Livinière - Les 3 écus",
+    text:
+      "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
+    img: im1,
+  },
+  {
+    headerText: "Minervois Blanc - Combe Violon",
+    text:
+      "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original. ",
+    img: im2,
+  },
 ];
 
 export const winesOverview = [

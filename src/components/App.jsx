@@ -4,7 +4,6 @@ import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/heroScroll.jsx";
 import Hero from "./hero/hero2.jsx";
 import Story from "./story.jsx";
-import Team from "./team.jsx";
 import Wineyard from "./wineyard/wineyard.jsx";
 import Wines from "./wines/wines.jsx";
 import Contact from "./contact.jsx";
@@ -32,7 +31,7 @@ export default class App extends Component {
   }
 
   initScrollTriggers() {
-    const wines = [1, 2, 3, 4];
+    const wines = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     const wineUpPercent = 10;
     const wineContainerSlideXPercent = 20;
     const routes = links.reduce((acc, link) => {
@@ -63,31 +62,31 @@ export default class App extends Component {
           triggerUp(trigger.vars.trigger.split("#Anchor_")[1]), // // Triggers when scrolling up (leaving, going backwards from) a specific section
       })
     );
-    // wines.map((wine) =>
-    //   gsap
-    //     .timeline({
-    //       scrollTrigger: {
-    //         trigger: "#wine" + wine,
-    //         start: "top bottom",
-    //         end: "70% 50%",
-    //         scrub: true,
-    //       },
-    //     })
-    //     .from("#wine" + wine, {
-    //       opacity: 0,
-    //       xPercent:
-    //         wine % 2 === 1
-    //           ? wineContainerSlideXPercent
-    //           : -wineContainerSlideXPercent, // If wine number is even : left, otherwise right
-    //       duration: 3,
-    //       ease: "power1",
-    //     })
-    //     .from("#wine" + wine + " .winePicture", {
-    //       opacity: 0,
-    //       duration: 2,
-    //       yPercent: wineUpPercent,
-    //     })
-    // );
+    wines.map((wine) =>
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#wine" + wine,
+            start: "top bottom",
+            end: "top 50%",
+            scrub: true,
+          },
+        })
+        .from("#wine" + wine, {
+          opacity: 0,
+          xPercent:
+            wine % 2 === 1
+              ? -wineContainerSlideXPercent
+              : wineContainerSlideXPercent, // If wine number is even : left, otherwise right
+          duration: 3,
+          ease: "power1",
+        })
+        .from("#wine" + wine + " .winePicture", {
+          opacity: 0,
+          duration: 2,
+          yPercent: wineUpPercent,
+        })
+    );
   }
   componentDidMount() {
     this.initScrollTriggers();
