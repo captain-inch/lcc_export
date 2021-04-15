@@ -9,6 +9,12 @@ import App from "./components/App.jsx";
 
 ReactDOM.render(
   <React.StrictMode>
+    <main>
+      <meta
+        name="google-site-verification"
+        content="googleebe381d69f09da54.htm"
+      />
+    </main>
     <App />
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
-import Hero from "./hero/heroScroll.jsx";
+// import Hero from "./hero/heroScroll.jsx";
+import Hero from "./hero/hero2.jsx";
 import Story from "./story.jsx";
 import Team from "./team.jsx";
 import Wineyard from "./wineyard/wineyard.jsx";
@@ -103,12 +104,10 @@ export default class App extends Component {
           active={this.state.route}
         />
         <Anchor id="Anchor_home" refprop={this.state.refs[0]} />
-        <Hero timeout={5000} id="home" />
+        <Hero timeout={5000} id="home" arrowTarget={this.state.refs[1]} />
         <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
         <Story />
-        <Anchor id="Anchor_team" refprop={this.state.refs[2]} />
-        <Team />
-        <Anchor id="Anchor_wineyard" refprop={this.state.refs[3]} />
+        <Anchor id="Anchor_wineyard" refprop={this.state.refs[2]} />
         <Wineyard />
         <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
         <Wines refprop={this.state.refs[3]} className="wines" />

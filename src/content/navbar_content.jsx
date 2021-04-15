@@ -7,11 +7,6 @@ export const links = [
     active: "home",
   },
   {
-    text: "Team",
-    route: "team",
-    active: "home",
-  },
-  {
     text: "Wineyard",
     route: "wineyard",
     active: "home",
