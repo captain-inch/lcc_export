@@ -1,4 +1,3 @@
-import gsap from "gsap/gsap-core";
 import React, { Component } from "react";
 import {
   teamHeader,
@@ -6,33 +5,12 @@ import {
   storyContent,
 } from "./../content/story_content.jsx";
 export default class Story extends Component {
-  componentDidMount() {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#trio",
-          start: "50% 100%",
-          end: "50% 20%",
-          scrub: true,
-        },
-      })
-      .from(
-        "#trio",
-        {
-          scale: 1.2,
-          opacity: 0.75,
-          duration: 2,
-          ease: "power3.out",
-        },
-        0
-      );
-  }
   render() {
     return (
       <div id="story">
-        <h1>Story</h1>
-        <h3>{teamHeader.title}</h3>
-        <div className="flex flex-column justify-center">
+        <h1 className="sectionTitle">Story</h1>
+        <h3 className="sectionSubtitle">{teamHeader.title}</h3>
+        <div className="flex flex-column justify-center mt3 mb4">
           <img
             id="trio"
             className="shadow-3"
@@ -58,9 +36,12 @@ export default class Story extends Component {
         <div className="flex flex-row flex-wrap justify-around">
           {teamDetail.reduce((acc, val) => {
             acc.push(
-              <div key={acc.length} className="flex flex-column w5 ma2">
+              <div
+                key={acc.length}
+                className="teamItem flex flex-column w5 ma2"
+              >
                 <h4 className="mt3 mb3">{val.name}</h4>
-                <img className="shadow-3" src={val.img} alt={val.name} />
+                <img className="shadow-3 grow" src={val.img} alt={val.name} />
                 <p className="tj">{val.text}</p>
               </div>
             );

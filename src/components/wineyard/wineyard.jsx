@@ -3,43 +3,10 @@ import MyGallery from "./gallery.jsx";
 import { wineyard_Content } from "./../../content/wineyard_content.jsx";
 import ReadMoreReact from "read-more-react";
 import banner from "./../../media/img/misc/bgbanner.jpg";
-import gsap from "gsap";
 const minimumLength = 100;
 const idealLength = 150;
 const maximumLength = 220;
 export default class Wineyard extends Component {
-  componentDidMount() {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#wineyardtitle",
-          start: "50% 90%",
-          end: "50% 10%",
-          scrub: true,
-        },
-      })
-      .from(
-        "#wineyardtitle",
-        {
-          scale: 0.9,
-          opacity: 0,
-          duration: 2,
-          yPercent: 30,
-          ease: "power3.out",
-        },
-        0
-      )
-      .from(
-        "#wineyardbanner",
-        {
-          scale: 1.2,
-          duration: 2,
-          yPercent: -10,
-          ease: "power2.out",
-        },
-        0
-      );
-  }
   render() {
     return (
       <div id="wineyard" className="mt5">
@@ -67,19 +34,19 @@ export default class Wineyard extends Component {
             }}
           ></div>
         </div>
-        <h3>Our core values</h3>
+        <h3 className="sectionSubtitle">Our core values</h3>
         <div className="flex flex-row flex-wrap justify-around">
           {wineyard_Content.reduce((acc, val) => {
             acc.push(
               <div
                 key={acc.length}
-                className="flex flex-column w5 ma2 items-center dimBg waveBg2"
+                className="wineyardItem flex flex-column w5 ma2 items-center dimBg waveBg2"
               >
                 <h4 className="mt3 mb3 h3 flex flex-column justify-center">
                   {val.headerText}
                 </h4>
                 <div className="w5 h5 overflow-hidden flex flex-column justify-center">
-                  <img className="" src={val.img} alt={val.name} />
+                  <img className="grow" src={val.img} alt={val.name} />
                 </div>
                 <div className="tj">
                   <ReadMoreReact
@@ -95,8 +62,10 @@ export default class Wineyard extends Component {
             return acc;
           }, [])}
         </div>
-        <h3>Gallery</h3>
-        <MyGallery targetRowHeight={300} />
+        <h3 className="sectionSubtitle">Gallery</h3>
+        <div id="galleryWrapper">
+          <MyGallery id="galleryReact" targetRowHeight={300} />
+        </div>
       </div>
     );
   }

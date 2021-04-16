@@ -37,7 +37,7 @@ export default class Navbar extends Component {
         <div className="flex flex-column-m justify-between-l">
           <a href="#home" className="flex-m justify-center-m">
             <img
-              className="mr0-m ml0-m h3-m"
+              className="mr0-m ml0-m h3"
               src={this.props.logo}
               alt="Logo Domaine Michelin"
               onClick={(e) =>

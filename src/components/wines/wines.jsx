@@ -21,7 +21,7 @@ export default class Wines extends Component {
   render() {
     return (
       <div id="wines">
-        <h1 className="">Our wines</h1>
+        <h1 className="winesTitle sectionTitle">Our wines</h1>
         {/* ===== Wines overview ===== */}
         <div className="wineOverview center flex flex-row-ns flex-column">
           {winesOverview.reduce((acc, val) => {

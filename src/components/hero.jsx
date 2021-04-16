@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { coverText } from "../../content/hero_content2.jsx";
+import { coverText, cta } from "../content/hero_content2.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bgvideo from "./../../media/vid/barriques_timewarptestfinal.mov";
 import Typical from "react-typical";
 import Loader from "react-loader-spinner";
 // import { bgvideos } from "../../content/bgvideos.jsx";
@@ -31,42 +30,20 @@ export default class Hero extends Component {
       });
       gsap.to(body, { overflow: "auto" }, 0);
       this.initTriggers();
-      console.log("Loading complete");
     });
   }
   async loadVideos() {
-    const { bgvideos } = await import("../../content/bgvideos.jsx");
+    const { bgvideos } = await import("../content/bgvideos.jsx");
     this.setState({ bgvideos });
     return bgvideos;
   }
   videoEnded(e) {
-    console.log("video ended, switching video");
     const newIndex = (this.state.videoIndex + 1) % this.state.bgvideos.length;
-    this.setState(
-      { videoIndex: newIndex, src: this.state.bgvideos[newIndex] },
-      () => console.log(this.state)
-    );
+    this.setState({ videoIndex: newIndex, src: this.state.bgvideos[newIndex] });
     e.target.load(); // Reloads data from new video
     e.target.play(); //
   }
   initTriggers() {
-    gsap
-      .timeline()
-      .to("#arrow", {
-        scale: 1,
-        duration: 0.3,
-
-        ease: "power1.out",
-      })
-      .to("#arrow", {
-        fill: "white",
-        scale: 0.8,
-        duration: 0.6,
-        opacity: 0.2,
-        ease: "power1.in",
-      })
-      .yoyo(true)
-      .repeat(-1);
     this.setState({ videoEl: document.querySelector("#heroVideo") });
     ScrollTrigger.create({
       // Stops video when out of viewport
@@ -76,13 +53,11 @@ export default class Hero extends Component {
       onEnterBack: () => {
         try {
           this.state.videoEl.play();
-          console.log("Entering back ...");
         } catch (e) {}
       },
       onLeave: () => {
         try {
           this.state.videoEl.pause();
-          console.log("Leaving ...");
         } catch (e) {}
       },
       // onLeaveBack
@@ -115,28 +90,26 @@ export default class Hero extends Component {
           loop={Infinity}
           wrapper="div"
         />
-        <div
-          className="arrowContainer pointer"
-          onClick={() => this.handleClickArrow()}
-        >
-          <svg
-            id="arrow"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="white"
-            className="arrow bi bi-chevron-double-down"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-            />
-            <path
-              fillRule="evenodd"
-              d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
+        <div className="ctaContainer flex flex-column flex-row-ns">
+          {cta.reduce((acc, val) => {
+            acc.push(
+              <a
+                key={acc.length}
+                className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br4 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
+                onClick={(function (ref) {
+                  return function () {
+                    ref.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  };
+                })(this.props.ctaRefs[acc.length].current)}
+              >
+                <span className="pr2 nowrap">{val.text}</span>
+                <span className="w2"> {val.icon}</span>
+              </a>
+            );
+            return acc;
+          }, [])}
         </div>
       </div>
     ) : (
