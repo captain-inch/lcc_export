@@ -95,7 +95,7 @@ export default class Hero extends Component {
             acc.push(
               <a
                 key={acc.length}
-                className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br4 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
+                className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
                 onClick={(function (ref) {
                   return function () {
                     ref.scrollIntoView({
@@ -104,7 +104,7 @@ export default class Hero extends Component {
                   };
                 })(this.props.ctaRefs[acc.length].current)}
               >
-                <span className="pr2 nowrap">{val.text}</span>
+                <span className="pr2 nowrap tc">{val.text}</span>
                 <span className="w2"> {val.icon}</span>
               </a>
             );
