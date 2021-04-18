@@ -1,2 +1,0 @@
-(this.webpackJsonplcc_export=this.webpackJsonplcc_export||[]).push([[3],{54:function(e,t,s){"use strict";s.r(t),s.d(t,"bgvideos",(function(){return i}));var i=[s.p+"static/media/pexels-joshua-6739345.ed4d6dc5.mp4",s.p+"static/media/barriques_timewarptestfinal.daddf1de.mov"]}}]);
-//# sourceMappingURL=3.9a5f60f1.chunk.js.map
