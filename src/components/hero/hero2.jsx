@@ -42,7 +42,7 @@ export default class Hero extends Component {
                   };
                 })(this.props.ctaRefs[acc.length].current)}
               >
-                <span className="pr2 nowrap tc">{val.text}</span>
+                <span className="pr2 nowrap tc center">{val.text}</span>
                 <span className="w2"> {val.icon}</span>
               </a>
             );
