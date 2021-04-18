@@ -62,7 +62,9 @@ export default class Wineyard extends Component {
             return acc;
           }, [])}
         </div>
-        <h3 className="sectionSubtitle">Gallery</h3>
+        <h3 className="sectionSubtitle" id="galleryTitle">
+          Gallery
+        </h3>
         <div id="galleryWrapper">
           <MyGallery id="galleryReact" targetRowHeight={300} />
         </div>

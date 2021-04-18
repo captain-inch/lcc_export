@@ -27,6 +27,10 @@ body {
   text-shadow: -1px -1px 0 #000, 4px -3px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+.textShadowLight {
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000;
+}
 .lightboxImg {
   position: fixed;
   // top: 50vh;

@@ -220,8 +220,11 @@ const ScrollTriggersContact = () => {
   ScrollTriggerItems(document.querySelectorAll("#domainlocationmap"));
 };
 
-const ScrollTriggerItems = (querySelectorAllAnswer) => {
+const ScrollTriggerItems = (querySelectorAllAnswer, element = null) => {
   for (let item of querySelectorAllAnswer) {
+    if (element === null) {
+      element = item;
+    }
     gsap.to(item, {
       opacity: 0,
       scale: overviewScale0,
@@ -239,7 +242,7 @@ const ScrollTriggerItems = (querySelectorAllAnswer) => {
             duration: animationInDuration,
           }),
         onLeaveBack: () =>
-          gsap.to(item, {
+          gsap.to(element, {
             opacity: 0,
             scale: overviewScale0,
             duration: animationOutDuration,

@@ -14,7 +14,7 @@ class NavListItem extends Component {
           className={
             this.props.className +
             (this.props.active === this.props.route
-              ? " b pb1 bb bw2 b--white-50"
+              ? " textShadowLight b pb1 bb bw2 b--white-50"
               : "")
           }
         >

@@ -6,10 +6,14 @@
   height: 100vh;
   z-index: 0;
 
-  video {
+  video,
+  #videoThumbnail {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
+  }
+  #videoThumbnail {
+    filter: blur(20px);
   }
 }
 

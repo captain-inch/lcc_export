@@ -19,8 +19,9 @@ export default class Story extends Component {
             alt={teamHeader.title}
           />
         </div>
+        <h3 className="sectionSubtitle">{storyContent.title}</h3>
         <p className="center tj pa2 pa3-ns mw7 w-100">
-          {storyContent.reduce((acc, val) => {
+          {storyContent.body.reduce((acc, val) => {
             acc.push(
               val.highlight ? (
                 <span className="emphathize" key={acc.length}>

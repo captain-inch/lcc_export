@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
 // import Hero from "./hero/heroScroll.jsx";
-import Hero from "./hero.jsx";
+import Hero from "./hero/hero2.jsx";
 import Story from "./story.jsx";
 import Wineyard from "./wineyard/wineyard.jsx";
 import Wines from "./wines/wines.jsx";
@@ -19,17 +19,9 @@ export default class App extends Component {
       refs.push(React.createRef());
     }
     this.state = { route: "#home", refs };
-    this.routeChange = this.routeChange.bind(this);
   }
-  routeChange(r) {
-    // if (r !== this.state?.route) {
-    //   this.setState({ route: r });
-    // }
-  }
-
   componentDidMount() {
     initScrollTriggers(links, this);
-    // this.state.refs[0].current.scrollTo(); // SCROLL
   }
 
   render() {

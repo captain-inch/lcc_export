@@ -22,29 +22,25 @@ export default class Hero extends Component {
       videoEl: null,
     };
     this.handleClickArrow = this.handleClickArrow.bind(this);
-    this.loadVideos()
-      .then((bgvideos) => {
-        this.setState({
-          bgvideos,
-          src: bgvideos[this.state.videoIndex],
-        });
-      })
-      .then(() => {
-        gsap.to(body, { overflow: "auto" }, 0);
-        this.initTriggers();
-        this.setState({ loaded: true });
+    this.loadVideos().then((bgvideos) => {
+      this.setState({
+        loaded: true,
+        bgvideos,
+        src: bgvideos[this.state.videoIndex],
       });
+      gsap.to(body, { overflow: "auto" }, 0);
+      this.initTriggers();
+    });
   }
   async loadVideos() {
     const { bgvideos } = await import("../content/bgvideos.jsx");
+    this.setState({ bgvideos });
     return bgvideos;
   }
-  async videoEnded(e) {
-    this.setState({ loaded: false });
+  videoEnded(e) {
     const newIndex = (this.state.videoIndex + 1) % this.state.bgvideos.length;
     this.setState({ videoIndex: newIndex, src: this.state.bgvideos[newIndex] });
     e.target.load(); // Reloads data from new video
-    this.setState({ loaded: true });
     e.target.play(); //
   }
   initTriggers() {
@@ -89,7 +85,7 @@ export default class Hero extends Component {
           <source src={this.state.src} />
         </video>
         <Typical
-          className="b tc1 bgt br3 pa2 coverText textShadow pa3 mt4-m"
+          className="b tc1 bgt br3 pa2 coverText pa3 mt4-m"
           steps={coverText}
           loop={Infinity}
           wrapper="div"
