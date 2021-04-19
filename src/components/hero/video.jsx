@@ -20,7 +20,6 @@ export default class Video extends Component {
     };
   }
   async loadVideos() {
-    console.log("Loading videos");
     const { bgvideos } = await import("../../content/bgvideos.jsx");
     return bgvideos;
   }
@@ -93,15 +92,15 @@ export default class Video extends Component {
           alt="Preview thumbnail"
           id="videoThumbnail"
         ></img>
-        {this.state.loaded ? null : (
-          <Loader
-            type="TailSpin"
-            color="#cccccc"
-            className="loader"
-            height={100}
-            width={100}
-          />
-        )}
+
+        <Loader
+          type="TailSpin"
+          color="#cccccc"
+          className="loader"
+          visible={this.state.loaded ? false : true}
+          height={100}
+          width={100}
+        />
       </div>
     );
   }
