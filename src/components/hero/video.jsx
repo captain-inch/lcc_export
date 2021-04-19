@@ -13,7 +13,8 @@ export default class Video extends Component {
     this.state = {
       loaded: false,
       bgvideos: [],
-      src: null,
+      videosrc: null,
+      thumbnailsrc: null,
       videoIndex: 0,
       videoEl: null,
       thumbnails,
@@ -25,13 +26,15 @@ export default class Video extends Component {
   }
   componentDidMount() {
     const videoEl = document.querySelector("#heroVideo");
-    this.setState({ videoEl });
+    this.setState({
+      videoEl,
+      thumbnailsrc: this.state.thumbnails[this.state.videoIndex],
+    });
     this.loadVideos().then((bgvideos) =>
       this.setState({
         bgvideos,
         thumbnails,
         videosrc: bgvideos[this.state.videoIndex],
-        thumbnailsrc: this.state.thumbnails[this.state.videoIndex],
       })
     );
     this.initTriggers();
