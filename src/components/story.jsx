@@ -8,7 +8,7 @@ export default class Story extends Component {
   render() {
     return (
       <div id="story">
-        <h1 className="sectionTitle">Story</h1>
+        <h1 className="sectionTitle z-999">Story</h1>
         <h3 className="sectionSubtitle">{teamHeader.title}</h3>
         <div className="flex flex-column justify-center mt3 mb4">
           <img
