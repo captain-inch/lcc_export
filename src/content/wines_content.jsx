@@ -1,8 +1,8 @@
 import im1 from "./../media/img/wines/MLL 3 ecus.png";
 import im2 from "./../media/img/wines/MB CV.png";
-import overview_1 from "./../media/img/wines/overview_1.png";
-import overview_2 from "./../media/img/wines/overview_2.png";
-import overview_3 from "./../media/img/wines/overview_3.png";
+import overview_1 from "./../media/img/wines/overview_1.jpg";
+import overview_2 from "./../media/img/wines/overview_2.jpg";
+import overview_3 from "./../media/img/wines/overview_3.jpg";
 
 export const winesList = [
   {
