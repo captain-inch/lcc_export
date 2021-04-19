@@ -13,28 +13,26 @@ export default class Video extends Component {
     this.state = {
       loaded: false,
       bgvideos: [],
-      videosrc: null,
-      thumbnailsrc: null,
+      src: null,
       videoIndex: 0,
       videoEl: null,
       thumbnails,
     };
   }
   async loadVideos() {
+    console.log("Loading videos");
     const { bgvideos } = await import("../../content/bgvideos.jsx");
     return bgvideos;
   }
   componentDidMount() {
     const videoEl = document.querySelector("#heroVideo");
-    this.setState({
-      videoEl,
-      thumbnailsrc: this.state.thumbnails[this.state.videoIndex],
-    });
+    this.setState({ videoEl });
     this.loadVideos().then((bgvideos) =>
       this.setState({
         bgvideos,
         thumbnails,
         videosrc: bgvideos[this.state.videoIndex],
+        thumbnailsrc: this.state.thumbnails[this.state.videoIndex],
       })
     );
     this.initTriggers();
@@ -95,15 +93,15 @@ export default class Video extends Component {
           alt="Preview thumbnail"
           id="videoThumbnail"
         ></img>
-
-        <Loader
-          type="TailSpin"
-          color="#cccccc"
-          className="loader"
-          visible={this.state.loaded ? false : true}
-          height={100}
-          width={100}
-        />
+        {this.state.loaded ? null : (
+          <Loader
+            type="TailSpin"
+            color="#cccccc"
+            className="loader"
+            height={100}
+            width={100}
+          />
+        )}
       </div>
     );
   }

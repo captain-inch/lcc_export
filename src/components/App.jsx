@@ -1,15 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
 // import Hero from "./hero/heroScroll.jsx";
 import Hero from "./hero/hero2.jsx";
-import Story from "./story.jsx";
-import Wineyard from "./wineyard/wineyard.jsx";
-import Wines from "./wines/wines.jsx";
-import Contact from "./contact.jsx";
+import Loader from "react-loader-spinner";
+
 import Anchor from "./anchor";
 import { links, logo } from "../content/navbar_content.jsx";
 import { initScrollTriggers } from "./animations.js";
+const Story = lazy(() => import("./story.jsx"));
+const Wineyard = lazy(() => import("./wineyard/wineyard.jsx"));
+const Wines = lazy(() => import("./wines/wines.jsx"));
+const Contact = lazy(() => import("./contact.jsx"));
 
 export default class App extends Component {
   constructor(props) {
@@ -41,13 +43,89 @@ export default class App extends Component {
           ctaRefs={[this.state.refs[1], this.state.refs[4]]}
         />
         <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
-        <Story />
+        <Suspense
+          fallback={
+            <div
+              className="h5 bg--yellow"
+              style={{ display: "grid", placeContent: "center" }}
+            >
+              <h3>Loading ...</h3>
+              <Loader
+                type="TailSpin"
+                color="#cccccc"
+                className=""
+                visible={this.state.loaded ? false : true}
+                height={100}
+                width={100}
+              />
+            </div>
+          }
+        >
+          <Story />
+        </Suspense>
         <Anchor id="Anchor_wineyard" refprop={this.state.refs[2]} />
-        <Wineyard />
+        <Suspense
+          fallback={
+            <div
+              className="h5 bg--yellow"
+              style={{ display: "grid", placeContent: "center" }}
+            >
+              <h3>Loading ...</h3>
+              <Loader
+                type="TailSpin"
+                color="#cccccc"
+                className=""
+                visible={this.state.loaded ? false : true}
+                height={100}
+                width={100}
+              />
+            </div>
+          }
+        >
+          <Wineyard />
+        </Suspense>
         <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
-        <Wines refprop={this.state.refs[3]} className="wines" />
+        <Suspense
+          fallback={
+            <div
+              className="h5 bg--yellow"
+              style={{ display: "grid", placeContent: "center" }}
+            >
+              <h3>Loading ...</h3>
+              <Loader
+                type="TailSpin"
+                color="#cccccc"
+                className=""
+                visible={this.state.loaded ? false : true}
+                height={100}
+                width={100}
+              />
+            </div>
+          }
+        >
+          <Wines refprop={this.state.refs[3]} className="wines" />
+        </Suspense>
         <Anchor id="Anchor_contact" refprop={this.state.refs[4]} />
-        <Contact />
+        <Suspense
+          fallback={
+            <div
+              className="h5 bg--yellow"
+              style={{ display: "grid", placeContent: "center" }}
+            >
+              <h3>Loading ...</h3>
+              <Loader
+                type="TailSpin"
+                color="#cccccc"
+                className=""
+                visible={this.state.loaded ? false : true}
+                height={100}
+                width={100}
+              />
+            </div>
+          }
+        >
+          <Contact />
+        </Suspense>
       </div>
     );
   }
