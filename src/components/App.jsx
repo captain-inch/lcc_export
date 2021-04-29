@@ -12,7 +12,9 @@ const Story = lazy(() => import("./story.jsx"));
 const Wineyard = lazy(() => import("./wineyard/wineyard.jsx"));
 const Wines = lazy(() => import("./wines/wines.jsx"));
 const Contact = lazy(() => import("./contact.jsx"));
-
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 export default class App extends Component {
   constructor(props) {
     super(props);
