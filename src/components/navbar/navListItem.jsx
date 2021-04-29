@@ -11,10 +11,11 @@ class NavListItem extends Component {
           onClick={(e) =>
             this.props.callback(e, this.props.refprop.current, this.props.route)
           }
+          style={{ transition: "all 0.3s" }}
           className={
             this.props.className +
             (this.props.active === this.props.route
-              ? " textShadowLight b pb1 bb bw2 b--white-50"
+              ? " b pb1 bb bw2 b--white-50"
               : "")
           }
         >

@@ -31,7 +31,7 @@ export default class Navbar extends Component {
     return (
       <nav
         id="navbar"
-        className="bgt1 bgblur z-2 absolute"
+        className="bgt1 bgblur z-999 absolute"
         style={{ position: "fixed", top: 0 }}
       >
         <div className="flex flex-column-m justify-between-l">
