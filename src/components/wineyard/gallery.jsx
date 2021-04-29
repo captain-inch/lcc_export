@@ -44,7 +44,7 @@ export default class MyGallery extends Component {
         <div
           style={{ backdropFilter: "blur(5px)" }}
           className="lightboxBg dn z-2 fixed top-0 left-0 w-100 vh-100 bg-black-60 pointer"
-          onClick={() => this.closeLightbox()}
+          //onClick={() => this.closeLightbox()}
         >
           {this.state.lightboxActive ? (
             <Lightbox
