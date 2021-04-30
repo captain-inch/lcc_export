@@ -83,4 +83,10 @@ export const gallerySettings = [
     height: 1200,
     width: 900,
   },
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/P1150951.JPG?raw=true",
+    height: 1347,
+    width: 900,
+  },
 ];
