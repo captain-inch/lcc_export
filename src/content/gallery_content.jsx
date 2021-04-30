@@ -26,7 +26,7 @@ export const gallerySettings = [
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC_9023.jpg?raw=true",
-    height: 900,
+    height: 772,
     width: 1358,
   },
   {
