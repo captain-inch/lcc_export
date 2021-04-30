@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Wine from "./wine.jsx";
 import Anchor from "../anchor.jsx";
 import { winesList, winesOverview } from "../../content/wines_content.jsx";
+import { initAnimationsWines } from "../animations2.js";
 
 export default class Wines extends Component {
   constructor(props) {
@@ -11,6 +12,10 @@ export default class Wines extends Component {
       refs.push(React.createRef());
     }
     this.state = { activeAll: true, hover: null, refs };
+  }
+
+  componentDidMount() {
+    initAnimationsWines();
   }
   mouseOver(e) {
     this.setState({ activeAll: false, hoverId: e.target.parentNode.id });

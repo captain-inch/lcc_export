@@ -46,3 +46,6 @@ export const content = [
     },
   },
 ];
+
+export const websiteCreatorText = "Website created by Webmeo.";
+export const websiteCreatorUrl = "www.webmeo.fr";

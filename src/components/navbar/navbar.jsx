@@ -19,7 +19,6 @@ export default class Navbar extends Component {
       console.warn("Unable to scroll to, ref link is probably broken");
       // console.log(err);
     }
-    this.props.callback(route);
   };
 
   expendMenu = () => {

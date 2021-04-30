@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 
 import Anchor from "./anchor";
 import { links, logo } from "../content/navbar_content.jsx";
-import { initScrollTriggers } from "./animations.js";
+import { initAnimationsAnchor } from "./animations2.js";
 const Story = lazy(() => import("./story.jsx"));
 const Wineyard = lazy(() => import("./wineyard/wineyard.jsx"));
 const Wines = lazy(() => import("./wines/wines.jsx"));
@@ -25,14 +25,13 @@ export default class App extends Component {
     this.state = { route: "#home", refs };
   }
   componentDidMount() {
-    initScrollTriggers(links, this);
+    initAnimationsAnchor(links, this);
   }
 
   render() {
     return (
       <div id="App">
         <Navbar
-          callback={this.routeChange}
           links={links}
           refs={this.state.refs}
           active={this.state.route}

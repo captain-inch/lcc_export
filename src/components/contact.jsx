@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import { content } from "./../content/contact_content.jsx";
+import {
+  content,
+  websiteCreatorText,
+  websiteCreatorUrl,
+} from "./../content/contact_content.jsx";
+import { initAnimationsContact } from "./animations2.js";
 // import { storyContent } from "./../content/story_content.jsx";
 export default class Contact extends Component {
+  componentDidMount() {
+    initAnimationsContact();
+  }
   render() {
     return (
       <div id="contact">
@@ -29,7 +37,7 @@ export default class Contact extends Component {
                 <h4 className="mt3 mb3 h3 flex flex-column justify-center">
                   {val.title}
                 </h4>
-                <div className="w-70 overflow-hidden flex flex-column justify-center items-center">
+                <div className="w-70 h5 overflow-hidden flex flex-column justify-center items-center">
                   <img className="grow" src={val.logo} alt={val.title} />
                 </div>
                 <p className="tj">{val.text}</p>
@@ -46,6 +54,9 @@ export default class Contact extends Component {
             );
             return acc;
           }, [])}
+        </div>
+        <div className="w-100 tc h1 i gray pointer grow f6">
+          <a href={websiteCreatorUrl}>{websiteCreatorText}</a>
         </div>
       </div>
     );

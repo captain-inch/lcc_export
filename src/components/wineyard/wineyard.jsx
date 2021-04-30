@@ -3,10 +3,15 @@ import MyGallery from "./gallery.jsx";
 import { wineyard_Content } from "./../../content/wineyard_content.jsx";
 import ReadMoreReact from "read-more-react";
 import banner from "./../../media/img/misc/bgbanner.jpg";
+import { initAnimationsWineyard } from "../animations2.js";
 const minimumLength = 100;
 const idealLength = 150;
 const maximumLength = 220;
+
 export default class Wineyard extends Component {
+  componentDidMount() {
+    initAnimationsWineyard();
+  }
   render() {
     return (
       <div id="wineyard" className="mt5">

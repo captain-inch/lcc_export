@@ -4,7 +4,12 @@ import {
   teamDetail,
   storyContent,
 } from "./../content/story_content.jsx";
+import { initAnimationsStory } from "./animations2.js";
+
 export default class Story extends Component {
+  componentDidMount() {
+    initAnimationsStory();
+  }
   render() {
     return (
       <div id="story">
@@ -20,7 +25,7 @@ export default class Story extends Component {
           />
         </div>
         <h3 className="sectionSubtitle">{storyContent.title}</h3>
-        <p className="center tj pa2 pa3-ns mw7 w-100">
+        <p id="storyText" className="center tj pa2 pa3-ns mw7 w-100">
           {storyContent.body.reduce((acc, val) => {
             acc.push(
               val.highlight ? (
