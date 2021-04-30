@@ -4,7 +4,6 @@ import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/heroScroll.jsx";
 import Hero from "./hero/hero2.jsx";
 import Loader from "react-loader-spinner";
-
 import Anchor from "./anchor";
 import { links, logo } from "../content/navbar_content.jsx";
 import { initAnimationsAnchor } from "./animations2.js";
@@ -15,6 +14,13 @@ const Contact = lazy(() => import("./contact.jsx"));
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+/*
+TO DO :
+  > Add CTA on wine families
+  > ...
+
+  */
 export default class App extends Component {
   constructor(props) {
     super(props);

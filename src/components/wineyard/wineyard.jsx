@@ -59,7 +59,7 @@ export default class Wineyard extends Component {
                     min={minimumLength}
                     ideal={idealLength}
                     max={maximumLength}
-                    readMoreText="[...] Read more"
+                    readMoreText="Read more"
                   />
                 </div>
               </div>

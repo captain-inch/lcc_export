@@ -4,7 +4,15 @@ import {
   teamDetail,
   storyContent,
 } from "./../content/story_content.jsx";
+
+import { oenologists, family } from "../content/team_content.jsx";
+
 import { initAnimationsStory } from "./animations2.js";
+import ReadMoreReact from "read-more-react";
+
+const minimumLength = 130;
+const idealLength = 160;
+const maximumLength = 220;
 
 export default class Story extends Component {
   componentDidMount() {
@@ -48,11 +56,57 @@ export default class Story extends Component {
               >
                 <h4 className="mt3 mb3">{val.name}</h4>
                 <img className="shadow-3 grow" src={val.img} alt={val.name} />
-                <p className="tj">{val.text}</p>
+                <div className="tj">
+                  <ReadMoreReact
+                    text={val.text}
+                    min={minimumLength}
+                    ideal={idealLength}
+                    max={maximumLength}
+                    readMoreText="Read more"
+                  />
+                </div>
               </div>
             );
             return acc;
           }, [])}
+        </div>
+        <div id="oenologists">
+          <h3>{oenologists.title}</h3>
+          <p className="mw7 tj center pa2">{oenologists.text}</p>
+          <div className="flex flex-row flex-wrap justify-around">
+            {oenologists.members.reduce((acc, val) => {
+              acc.push(
+                <div
+                  key={acc.length}
+                  className="teamItem flex flex-column w5 ma2"
+                >
+                  <h4 className="mt3 mb3">{val.name}</h4>
+                  <img className="shadow-3 grow" src={val.src} alt={val.name} />
+                  <div className="tj">
+                    <ReadMoreReact
+                      text={val.text}
+                      min={minimumLength}
+                      ideal={idealLength}
+                      max={maximumLength}
+                      readMoreText="Read more"
+                    />
+                  </div>
+                </div>
+              );
+              return acc;
+            }, [])}
+          </div>{" "}
+        </div>
+        <div id="family">
+          <h3 className="mb2">{family.title}</h3>
+          <p className="mw7 tj center pa2">{family.text}</p>
+          <div className="flex items-center">
+            <img
+              className="shadow-3 grow mw6 center"
+              src={family.src}
+              alt={family.title}
+            />
+          </div>
         </div>
       </div>
     );

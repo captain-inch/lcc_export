@@ -24,6 +24,7 @@ export const initAnimationsStory = () => {
   ScrollTriggerTeam();
   ScrollTriggerItems(document.querySelectorAll(".teamItem"));
   ScrollTriggerItems(document.querySelectorAll("#storyText"));
+  ScrollTriggerItems(document.querySelectorAll("#family"));
 };
 export const initAnimationsContact = () => {
   ScrollTriggersContact();
