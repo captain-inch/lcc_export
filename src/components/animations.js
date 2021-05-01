@@ -4,18 +4,30 @@ const animationInDuration = 0.5;
 const animationOutDuration = 0.4;
 const overviewScale0 = 0.8;
 
-export const initScrollTriggers = (links, reactComponent) => {
+export const initAnimationsAnchor = (links, reactComponent) => {
   const routes = links.reduce((acc, link) => {
     acc.push(link.route);
     return acc;
   }, []);
   scrollTriggersAnchors(routes, reactComponent);
+};
+
+export const initAnimationsWines = () => {
   scrollTriggersWines([0, 1, 2, 3, 4, 5, 6, 7, 8]);
-  scrollTriggersWineyard();
-  ScrollTriggerTeam();
-  ScrollTriggersContact();
   ScrollTriggerItems(document.querySelectorAll(".sectionTitle"));
   ScrollTriggerItems(document.querySelectorAll(".sectionSubtitle"));
+};
+export const initAnimationsWinery = () => {
+  scrollTriggerswinery();
+};
+export const initAnimationsStory = () => {
+  ScrollTriggerTeam();
+  ScrollTriggerItems(document.querySelectorAll(".teamItem"));
+  ScrollTriggerItems(document.querySelectorAll("#storyText"));
+  ScrollTriggerItems(document.querySelectorAll("#family"));
+};
+export const initAnimationsContact = () => {
+  ScrollTriggersContact();
 };
 
 const scrollTriggersAnchors = (routes, reactComponent) => {
@@ -157,21 +169,21 @@ const scrollTriggersWines = (wines) => {
   });
 };
 
-const scrollTriggersWineyard = () => {
-  ScrollTriggerItems(document.querySelectorAll(".wineyardItem"));
+const scrollTriggerswinery = () => {
+  ScrollTriggerItems(document.querySelectorAll(".wineryItem"));
   ScrollTriggerItems(document.querySelectorAll("#galleryWrapper"));
 
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: "#wineyardtitle",
+        trigger: "#winerytitle",
         start: "50% 90%",
         end: "50% 10%",
         scrub: true,
       },
     })
     .from(
-      "#wineyardtitle",
+      "#winerytitle",
       {
         scale: 0.9,
         opacity: 0,
@@ -182,7 +194,7 @@ const scrollTriggersWineyard = () => {
       0
     )
     .from(
-      "#wineyardbanner",
+      "#winerybanner",
       {
         scale: 1.2,
         duration: 2,
@@ -220,11 +232,8 @@ const ScrollTriggersContact = () => {
   ScrollTriggerItems(document.querySelectorAll("#domainlocationmap"));
 };
 
-const ScrollTriggerItems = (querySelectorAllAnswer, element = null) => {
+const ScrollTriggerItems = (querySelectorAllAnswer, startPos = "4em 100%") => {
   for (let item of querySelectorAllAnswer) {
-    if (element === null) {
-      element = item;
-    }
     gsap.to(item, {
       opacity: 0,
       scale: overviewScale0,
@@ -232,7 +241,7 @@ const ScrollTriggerItems = (querySelectorAllAnswer, element = null) => {
     gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: "50% 100%",
+        start: startPos,
         id: "overview",
         scrub: true,
         onEnter: () =>
@@ -242,7 +251,7 @@ const ScrollTriggerItems = (querySelectorAllAnswer, element = null) => {
             duration: animationInDuration,
           }),
         onLeaveBack: () =>
-          gsap.to(element, {
+          gsap.to(item, {
             opacity: 0,
             scale: overviewScale0,
             duration: animationOutDuration,

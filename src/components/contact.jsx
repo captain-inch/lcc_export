@@ -4,7 +4,7 @@ import {
   websiteCreatorText,
   websiteCreatorUrl,
 } from "./../content/contact_content.jsx";
-import { initAnimationsContact } from "./animations2.js";
+import { initAnimationsContact } from "./animations.js";
 // import { storyContent } from "./../content/story_content.jsx";
 export default class Contact extends Component {
   componentDidMount() {

@@ -1,35 +1,35 @@
 import React, { Component } from "react";
 import MyGallery from "./gallery.jsx";
-import { wineyard_Content } from "./../../content/wineyard_content.jsx";
+import { winery_content } from "../../content/winery_content.jsx";
 import ReadMoreReact from "read-more-react";
 import banner from "./../../media/img/misc/bgbanner.jpg";
-import { initAnimationsWineyard } from "../animations2.js";
+import { initAnimationsWinery } from "../animations.js";
 const minimumLength = 100;
 const idealLength = 150;
 const maximumLength = 220;
 
-export default class Wineyard extends Component {
+export default class Winery extends Component {
   componentDidMount() {
-    initAnimationsWineyard();
+    initAnimationsWinery();
   }
   render() {
     return (
-      <div id="wineyard" className="mt5">
+      <div id="winery" className="mt5">
         <div className="flex flex-column items-center">
           <h1
             className="tc dib dimBgOut z-5"
-            id="wineyardtitle"
+            id="winerytitle"
             style={{
               background: "#ffffffaa",
               backdropFilter: "blur(3px)",
               margin: 0,
             }}
           >
-            Wineyard
+            winery
           </h1>
           <div
             className="w-100"
-            id="wineyardbanner"
+            id="winerybanner"
             style={{
               marginTop: "-30px",
               height: "100px",
@@ -41,11 +41,11 @@ export default class Wineyard extends Component {
         </div>
         <h3 className="sectionSubtitle">Our core values</h3>
         <div className="flex flex-row flex-wrap justify-around">
-          {wineyard_Content.reduce((acc, val) => {
+          {winery_content.reduce((acc, val) => {
             acc.push(
               <div
                 key={acc.length}
-                className="wineyardItem flex flex-column w5 ma2 items-center dimBg waveBg2"
+                className="wineryItem flex flex-column w5 ma2 items-center dimBg waveBg2"
               >
                 <h4 className="mt3 mb3 h3 flex flex-column justify-center">
                   {val.headerText}

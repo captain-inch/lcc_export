@@ -7,7 +7,7 @@ import {
 
 import { oenologists, family } from "../content/team_content.jsx";
 
-import { initAnimationsStory } from "./animations2.js";
+import { initAnimationsStory } from "./animations.js";
 import ReadMoreReact from "read-more-react";
 
 const minimumLength = 130;
@@ -56,7 +56,7 @@ export default class Story extends Component {
               >
                 <h4 className="mt3 mb3">{val.name}</h4>
                 <img className="shadow-3 grow" src={val.img} alt={val.name} />
-                <div className="tj">
+                <div className="tj mt3">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}
@@ -81,8 +81,13 @@ export default class Story extends Component {
                   className="teamItem flex flex-column w5 ma2"
                 >
                   <h4 className="mt3 mb3">{val.name}</h4>
-                  <img className="shadow-3 grow" src={val.src} alt={val.name} />
-                  <div className="tj">
+                  <img
+                    className="shadow-3 w4 center grow"
+                    style={{ filter: "grayscale(100%)" }}
+                    src={val.src}
+                    alt={val.name}
+                  />
+                  <div className="tj mt3">
                     <ReadMoreReact
                       text={val.text}
                       min={minimumLength}
@@ -98,7 +103,7 @@ export default class Story extends Component {
           </div>{" "}
         </div>
         <div id="family">
-          <h3 className="mb2">{family.title}</h3>
+          <h3 className="mb2 mw7 center">{family.title}</h3>
           <p className="mw7 tj center pa2">{family.text}</p>
           <div className="flex items-center">
             <img

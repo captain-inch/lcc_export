@@ -1,6 +1,18 @@
 export const gallerySettings = [
   {
     src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/gallery_1.jpg?raw=true",
+    height: 900,
+    width: 1359,
+  },
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC_9260.jpg?raw=true",
+    height: 900,
+    width: 1358,
+  },
+  {
+    src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC04091.jpg?raw=true",
     height: 900,
     width: 1350,
@@ -41,24 +53,14 @@ export const gallerySettings = [
     height: 900,
     width: 1358,
   },
-  {
-    src:
-      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC_9260.jpg?raw=true",
-    height: 900,
-    width: 1358,
-  },
+
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC_9286.jpg?raw=true",
     height: 900,
     width: 1358,
   },
-  {
-    src:
-      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/gallery_1.jpg?raw=true",
-    height: 900,
-    width: 1359,
-  },
+
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/gallery_2.jpg?raw=true",

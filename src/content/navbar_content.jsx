@@ -9,8 +9,8 @@ export const links = [
     active: "home",
   },
   {
-    text: "Wineyard",
-    route: "wineyard",
+    text: "Winery",
+    route: "winery",
     active: "home",
   },
   {

@@ -62,7 +62,7 @@ export const oenologists = {
     },
     {
       src: nicolasD,
-      name: "Nicolas Dutour: ",
+      name: "Nicolas Dutour",
       text:
         "Agronomist and oenologist, graduated in 2007. Wine making experience in Southern France, California and Brazil. Nicolas  has had management responsabilities in Languedoc region (Domaines Auriol). Nicolas joined Laboratoire Dubernet in 2013 as oenologist, senior advisor.",
     },

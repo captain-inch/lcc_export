@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { coverText, cta } from "../../content/hero_content2.jsx";
+import { coverText, cta } from "../../content/hero_content.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typical from "react-typical";

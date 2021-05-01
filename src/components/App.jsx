@@ -6,9 +6,9 @@ import Hero from "./hero/hero2.jsx";
 import Loader from "react-loader-spinner";
 import Anchor from "./anchor";
 import { links, logo } from "../content/navbar_content.jsx";
-import { initAnimationsAnchor } from "./animations2.js";
+import { initAnimationsAnchor } from "./animations.js";
 const Story = lazy(() => import("./story.jsx"));
-const Wineyard = lazy(() => import("./wineyard/wineyard.jsx"));
+const Winery = lazy(() => import("./winery/winery.jsx"));
 const Wines = lazy(() => import("./wines/wines.jsx"));
 const Contact = lazy(() => import("./contact.jsx"));
 window.onbeforeunload = function () {
@@ -70,7 +70,7 @@ export default class App extends Component {
         >
           <Story />
         </Suspense>
-        <Anchor id="Anchor_wineyard" refprop={this.state.refs[2]} />
+        <Anchor id="Anchor_winery" refprop={this.state.refs[2]} />
         <Suspense
           fallback={
             <div
@@ -89,7 +89,7 @@ export default class App extends Component {
             </div>
           }
         >
-          <Wineyard />
+          <Winery />
         </Suspense>
         <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
         <Suspense

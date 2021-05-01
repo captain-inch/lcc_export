@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import Wine from "./wine.jsx";
 import Anchor from "../anchor.jsx";
-import { winesList, winesOverview } from "../../content/wines_content.jsx";
-import { initAnimationsWines } from "../animations2.js";
+import {
+  winesList,
+  winesOverview,
+  wineIcon,
+} from "../../content/wines_content.jsx";
+import { initAnimationsWines } from "../animations.js";
+import ReadMoreReact from "read-more-react";
+
+const minimumLength = 100;
+const idealLength = 150;
+const maximumLength = 220;
 
 export default class Wines extends Component {
   constructor(props) {
@@ -17,10 +26,21 @@ export default class Wines extends Component {
   componentDidMount() {
     initAnimationsWines();
   }
-  mouseOver(e) {
-    this.setState({ activeAll: false, hoverId: e.target.parentNode.id });
+
+  checkZone(target) {
+    for (let parent of document.querySelectorAll(".wineFamily")) {
+      if (parent.contains(target)) {
+        return parent.id;
+      }
+    }
   }
-  mouseOut(e) {
+
+  mouseEnter(e) {
+    const wineFamilyId = this.checkZone(e.target);
+    this.setState({ activeAll: false, hoverId: wineFamilyId });
+  }
+  mouseLeave(e) {
+    console.log("Leaving " + e.target);
     this.setState({ activeAll: true });
   }
   render() {
@@ -28,12 +48,12 @@ export default class Wines extends Component {
       <div id="wines">
         <h1 className="winesTitle sectionTitle">Our wines</h1>
         {/* ===== Wines overview ===== */}
-        <div className="wineOverview center flex flex-row-ns flex-column">
+        <div className="wineOverview center flex flex-row-ns flex-column justify-center-ns">
           {winesOverview.reduce((acc, val) => {
             acc.push(
               <div
                 className={
-                  "w-33-ns " +
+                  "wineFamily w-30-ns " +
                   // eslint-disable-next-line eqeqeq
                   (this.state.activeAll || this.state.hoverId == acc.length
                     ? "notdimmed"
@@ -41,8 +61,8 @@ export default class Wines extends Component {
                 }
                 key={acc.length}
                 id={acc.length}
-                onMouseOver={(e) => this.mouseOver(e)}
-                onMouseOut={(e) => this.mouseOut(e)}
+                onMouseEnter={(e) => this.mouseEnter(e)}
+                onMouseLeave={(e) => this.mouseLeave(e)}
               >
                 <img
                   src={val.img}
@@ -50,8 +70,14 @@ export default class Wines extends Component {
                   alt={val.title}
                 />
                 <h2
-                  className="pa1 no-underline pointer"
+                  className="pa1 no-underline pointer h3 mt0 mb5"
                   i={acc.length}
+                >
+                  {val.title}
+                </h2>
+                <a
+                  key={acc.length}
+                  className="ctaItem flex items-center w4 center pointer ma3 mb3 f5-l f6 i grow br2 ba bw1 ph3 pv2 dib black hover-white hover-bg-black-60 bgblur"
                   onClick={(function (i, refs) {
                     return function () {
                       console.log(i);
@@ -61,9 +87,19 @@ export default class Wines extends Component {
                     };
                   })(acc.length, this.state.refs)}
                 >
-                  {val.title}
-                </h2>
-                <p className="pa1 tc i">{val.text}</p>
+                  <span className="pr2 nowrap tc center mr5">See wines</span>
+                  <span className="w3 ">{wineIcon}</span>
+                </a>
+                <p className="pa1 mt0 tc i">
+                  <ReadMoreReact
+                    text={val.text}
+                    min={minimumLength}
+                    ideal={idealLength}
+                    max={maximumLength}
+                    readMoreText="Read more"
+                  />
+                  {val.txt}
+                </p>
               </div>
             );
             return acc;
