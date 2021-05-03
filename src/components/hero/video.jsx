@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { thumbnails } from "../../content/bgvideos.jsx";
 
-const body = document.querySelector("body");
 gsap.registerPlugin(ScrollTrigger);
 
 export default class Video extends Component {

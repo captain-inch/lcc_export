@@ -38,8 +38,8 @@ export const gallerySettings = [
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSC_9023.jpg?raw=true",
-    height: 772,
-    width: 1358,
+    height: 727,
+    width: 1630,
   },
   {
     src:
@@ -60,7 +60,12 @@ export const gallerySettings = [
     height: 900,
     width: 1358,
   },
-
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/IMG_3068.jpg?raw=true",
+    height: 900,
+    width: 1200,
+  },
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/gallery_2.jpg?raw=true",
@@ -88,6 +93,25 @@ export const gallerySettings = [
   {
     src:
       "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/P1150951.JPG?raw=true",
+    height: 900,
+    width: 1347,
+  },
+
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/IMG_2867.jpg?raw=true",
+    height: 900,
+    width: 1200,
+  },
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/IMG_1746.jpg?raw=true",
+    height: 900,
+    width: 1200,
+  },
+  {
+    src:
+      "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/P1160080.jpg?raw=true",
     height: 900,
     width: 1347,
   },

@@ -70,14 +70,14 @@ export default class Wines extends Component {
                   alt={val.title}
                 />
                 <h2
-                  className="pa1 no-underline pointer h3 mt0 mb5"
+                  className="pa1 no-underline pointer h3-ns mt0 mb5-ns mb2"
                   i={acc.length}
                 >
                   {val.title}
                 </h2>
-                <a
+                <div
                   key={acc.length}
-                  className="ctaItem flex items-center w4 center pointer ma3 mb3 f5-l f6 i grow br2 ba bw1 ph3 pv2 dib black hover-white hover-bg-black-60 bgblur"
+                  className="ctaItem flex items-center w4 center pointer ma2 ma3-ns f5-l f6 i grow br2 ba bw1 ph3 pv2 dib black hover-white hover-bg-black-60 bgblur"
                   onClick={(function (i, refs) {
                     return function () {
                       console.log(i);
@@ -89,8 +89,8 @@ export default class Wines extends Component {
                 >
                   <span className="pr2 nowrap tc center mr5">See wines</span>
                   <span className="w3 ">{wineIcon}</span>
-                </a>
-                <p className="pa1 mt0 tc i">
+                </div>
+                <p className="pa1 mt0 tc i mb5 mb2-ns">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}

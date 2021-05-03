@@ -95,77 +95,82 @@ const scrollTriggersWines = (wines) => {
   // ==================
 
   wines.map((wine) => {
-    gsap.to("#wine" + wine, {
-      opacity: 0,
-      xPercent:
-        wine % 2 === 1
-          ? -wineContainerSlideXPercent
-          : wineContainerSlideXPercent, // If wine number is even : left, otherwise right
-      duration: 0,
-    });
-    gsap.to("#wine" + wine + " .winePicture", {
-      opacity: 0,
-      duration: 0,
-      yPercent: wineUpPercent,
-    });
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#wine" + wine,
-        start: "50% 90%",
-        end: "50% 50%",
-        scrub: true,
-        onEnter: () =>
-          gsap
-            .timeline()
-            .to(
-              "#wine" + wine,
-              {
-                opacity: 1,
-                xPercent: 0, // If wine number is even : left, otherwise right
-                duration: animationInDuration,
-                ease: "",
-              },
-              0
-            )
-            .to(
-              "#wine" + wine + " .winePicture",
-              {
-                opacity: 1,
-                duration: animationOutDuration,
-                yPercent: 0,
-                ease: "power1",
-              },
-              animationInDuration / 2
-            ),
-        onLeaveBack: () =>
-          gsap
-            .timeline()
-            .to(
-              "#wine" + wine,
+    try {
+      gsap.to("#wine" + wine, {
+        opacity: 0,
+        xPercent:
+          wine % 2 === 1
+            ? -wineContainerSlideXPercent
+            : wineContainerSlideXPercent, // If wine number is even : left, otherwise right
+        duration: 0,
+      });
+      gsap.to("#wine" + wine + " .winePicture", {
+        opacity: 0,
+        duration: 0,
+        yPercent: wineUpPercent,
+      });
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: "#wine" + wine,
+          start: "50% 90%",
+          end: "50% 50%",
+          scrub: true,
+          onEnter: () =>
+            gsap
+              .timeline()
+              .to(
+                "#wine" + wine,
+                {
+                  opacity: 1,
+                  xPercent: 0, // If wine number is even : left, otherwise right
+                  duration: animationInDuration,
+                  ease: "",
+                },
+                0
+              )
+              .to(
+                "#wine" + wine + " .winePicture",
+                {
+                  opacity: 1,
+                  duration: animationOutDuration,
+                  yPercent: 0,
+                  ease: "power1",
+                },
+                animationInDuration / 2
+              ),
+          onLeaveBack: () =>
+            gsap
+              .timeline()
+              .to(
+                "#wine" + wine,
 
-              {
-                opacity: 0,
-                xPercent:
-                  wine % 2 === 1
-                    ? -wineContainerSlideXPercent
-                    : wineContainerSlideXPercent, // If wine number is even : left, otherwise right
-                duration: animationOutDuration,
-                ease: "power1.in",
-              },
-              0
-            )
-            .to(
-              "#wine" + wine + " .winePicture",
+                {
+                  opacity: 0,
+                  xPercent:
+                    wine % 2 === 1
+                      ? -wineContainerSlideXPercent
+                      : wineContainerSlideXPercent, // If wine number is even : left, otherwise right
+                  duration: animationOutDuration,
+                  ease: "power1.in",
+                },
+                0
+              )
+              .to(
+                "#wine" + wine + " .winePicture",
 
-              {
-                opacity: 0,
-                duration: animationOutDuration,
-                yPercent: wineUpPercent,
-              },
-              0
-            ),
-      },
-    });
+                {
+                  opacity: 0,
+                  duration: animationOutDuration,
+                  yPercent: wineUpPercent,
+                },
+                0
+              ),
+        },
+      });
+      return true;
+    } catch (e) {
+      return e;
+    }
   });
 };
 

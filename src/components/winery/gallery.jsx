@@ -1,10 +1,8 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component } from "react";
 import Gallery from "react-photo-gallery";
-import { gsap } from "gsap";
 import { gallerySettings } from "../../content/gallery_content.jsx";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-const body = document.querySelector("body");
 
 export default class MyGallery extends Component {
   constructor(props) {
