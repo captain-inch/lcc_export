@@ -36,7 +36,10 @@ export default class Video extends Component {
         onEnded={(e) => this.props.callbackEnded(e)}
         onCanPlay={(e) => this.props.callbackCanPlay(e)}
       >
-        <source src={this.props.srcs[this.props.videoindex]} />
+        <source
+          src={this.props.srcs[this.props.videoindex]}
+          poster={this.props.thumbnails[this.props.thumbnailindex]}
+        />
       </video>
     );
   }

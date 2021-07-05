@@ -39,7 +39,7 @@ export default class Hero extends Component {
     });
   }
   componentDidMount() {
-    const videoEl = document.querySelector("#heroVideo");
+    const videoEl = document.querySelector("#hero_video");
     this.setState({ videoEl, index: 1 });
     this.loadVideos();
   }
@@ -54,7 +54,7 @@ export default class Hero extends Component {
         nextIndex
     );
     this.setState({ videoindex: nextIndex, videoLoaded: false });
-    //this.state.videoEl.load();
+    this.state.videoEl.load();
   }
   canPlay(e) {
     console.log("Video can play");
