@@ -2,7 +2,7 @@ import React, { Component, lazy, Suspense } from "react";
 import Navbar from "./navbar/navbar.jsx";
 // import Hero from "./hero/hero.jsx";
 // import Hero from "./hero/heroScroll.jsx";
-import Hero from "./hero/hero2.jsx";
+import Hero from "./hero/hero3.jsx";
 import Loader from "react-loader-spinner";
 import Anchor from "./anchor";
 import { links, logo } from "../content/navbar_content.jsx";
