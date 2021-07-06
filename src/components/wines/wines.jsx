@@ -90,7 +90,7 @@ export default class Wines extends Component {
                   <span className="pr2 nowrap tc center mr5">See wines</span>
                   <span className="w3 ">{wineIcon}</span>
                 </div>
-                <p className="pa1 mt0 tc i mb5 mb2-ns">
+                <div className="pa1 mt0 tc i mb5 mb2-ns">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}
@@ -99,7 +99,7 @@ export default class Wines extends Component {
                     readMoreText="Read more"
                   />
                   {val.txt}
-                </p>
+                </div>
               </div>
             );
             return acc;

@@ -16,51 +16,28 @@ export default class Hero extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      videoEl: null,
-      videoLoaded: false,
       srcs: [],
-      thumbnails: [],
-      videoindex: 0,
-      thumbnailindex: 0,
-      sources: [],
     };
   }
+  shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = a[i];
+      a[i] = a[j];
+      a[j] = x;
+    }
+    return a;
+  }
   async loadVideos() {
-    await import("../../content/bgvideos.jsx").then((res) => {
-      let sources = [];
-      for (let src of res.bgvideos) {
-        sources.push({ src, type: "video/mp4" });
-      }
-      console.log(sources);
-      this.setState(
-        { sources, srcs: res.bgvideos, thumbnails: res.thumbnails },
-        () => console.log(this.state)
-      );
-    });
+    // Propre way to use async with await and without .then
+    const res = await import("./../../content/bgvideos.jsx");
+    this.setState({ srcs: this.shuffle(res.bgvideos) }, () =>
+      console.log(this.state)
+    );
   }
   componentDidMount() {
-    const videoEl = document.querySelector("#hero_video");
-    this.setState({ videoEl, index: 1 });
     this.loadVideos();
-  }
-  videoEnded(e) {
-    const nextIndex = (this.state.videoindex + 1) % this.state.srcs.length;
-    console.log(
-      "Video ended // Index : " +
-        this.state.videoindex +
-        " // Srcs length : " +
-        this.state.srcs.length +
-        " // Next index : " +
-        nextIndex
-    );
-    this.setState({ videoindex: nextIndex, videoLoaded: false });
-    this.state.videoEl.load();
-  }
-  canPlay(e) {
-    console.log("Video can play");
-    const nextIndex = (this.state.videoindex + 1) % this.state.srcs.length;
-    console.log("Next thumbnail index : " + nextIndex);
-    this.setState({ videoLoaded: true, thumbnailindex: nextIndex });
   }
   render() {
     return (
@@ -70,24 +47,8 @@ export default class Hero extends Component {
         className="flex content-center justify-center"
       >
         <div className="hero_element">
-          <Video
-            id="hero_video"
-            videoindex={this.state.videoindex}
-            thumnnailindex={this.state.thumbnailindex}
-            srcs={this.state.srcs}
-            thumbnails={this.state.thumbnails}
-            videoLoaded={this.state.videoLoaded}
-            callbackEnded={(e) => this.videoEnded(e)}
-            callbackCanPlay={(e) => this.canPlay(e)}
-          />
-          <ThumbnailSpinner
-            id="hero_thumbnail"
-            thumbnailindex={this.state.thumbnailindex}
-            thumbnails={this.state.thumbnails}
-            videoLoaded={this.state.videoLoaded}
-          />
+          <Video srcs={this.state.srcs} />
         </div>
-        {/* <LionPlayer sources={this.state.sources} autoplay="muted" /> */}
         <Typical
           className="b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow"
           steps={coverText}
