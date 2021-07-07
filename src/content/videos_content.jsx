@@ -27,7 +27,7 @@ import i7 from "../media/vid/thumbnail_7.jpg";
 // import v5 from "../media/vid/clip_5.m4v";
 // import v6 from "../media/vid/clip_6.m4v";
 // import v7 from "../media/vid/clip_7.m4v";
-
+const v0 = "https://www.youtube.com/watch?v=mhfsFSSxprw";
 const v1 =
   "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_1.m4v?raw=true";
 const v2 =
@@ -44,7 +44,7 @@ const v7 =
   "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_7.m4v?raw=true";
 
 export const bgvideos = [
-  [v1, i1],
+  [v0, i1],
   [v2, i2],
   [v3, i3],
   [v4, i4],
