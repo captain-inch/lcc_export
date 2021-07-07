@@ -29,22 +29,22 @@ import i7 from "../media/vid/thumbnail_7.jpg";
 // import v7 from "../media/vid/clip_7.m4v";
 const v0 = "https://www.youtube.com/watch?v=mhfsFSSxprw";
 const v1 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_1.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_1.mkv?raw=true";
 const v2 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_2.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_2.mkv?raw=true";
 const v3 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_3.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_3.mkv?raw=true";
 const v4 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_4.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_4.mkv?raw=true";
 const v5 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_5.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_5.mkv?raw=true";
 const v6 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_6.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_6.mkv?raw=true";
 const v7 =
-  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_7.m4v?raw=true";
+  "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/clip_7.mkv?raw=true";
 
 export const bgvideos = [
-  [v0, i1],
+  [v1, i1],
   [v2, i2],
   [v3, i3],
   [v4, i4],
