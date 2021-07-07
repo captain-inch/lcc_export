@@ -68,7 +68,10 @@ export default class Video extends Component {
     return (
       <div className="backgroundVideo" style={{ width: "100vw" }}>
         {this.state.firstvideoLoaded ? null : (
-          <img src={this.props.srcs[this.state.srcIndex1][1]} className="" />
+          <img
+            src={this.props.srcs[this.state.srcIndex1][1]}
+            id={"thumbnailPreview"}
+          />
         )}
         <div id="video1">
           <ReactPlayer
