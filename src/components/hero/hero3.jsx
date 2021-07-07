@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { coverText, cta } from "../../content/hero_content.jsx";
+import { coverText, cta, videoCta } from "../../content/hero_content.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typical from "react-typical";
 import Video from "./video2.jsx";
-import ThumbnailSpinner from "./thumbnailSpinner.jsx";
+import VideoLightbox from "./videoLightbox.jsx";
 // import { LionPlayer } from "lion-player";
 // import "lion-player/dist/lion-skin.min.css";
 
@@ -17,6 +17,7 @@ export default class Hero extends Component {
     super(props);
     this.state = {
       srcs: [],
+      videoLightbox: false,
     };
   }
   shuffle(a) {
@@ -29,12 +30,19 @@ export default class Hero extends Component {
     }
     return a;
   }
+
+  watchVideo(e) {
+    this.setState({ videoLightbox: true });
+  }
+
+  stopVideo(e) {
+    this.setState({ videoLightbox: false });
+  }
+
   async loadVideos() {
     // Propre way to use async with await and without .then
-    const res = await import("./../../content/bgvideos.jsx");
-    this.setState({ srcs: this.shuffle(res.bgvideos) }, () =>
-      console.log(this.state)
-    );
+    const res = await import("../../content/videos_content.jsx");
+    this.setState({ srcs: this.shuffle(res.bgvideos) });
   }
   componentDidMount() {
     this.loadVideos();
@@ -46,35 +54,47 @@ export default class Hero extends Component {
         id="hero"
         className="flex content-center justify-center"
       >
+        {this.state.videoLightbox ? (
+          <VideoLightbox closeCallback={(e) => this.stopVideo(e)} />
+        ) : null}
         <div className="hero_element">
-          <Video srcs={this.state.srcs} />
+          <Video
+            srcs={this.state.srcs}
+            videoLightbox={this.state.videoLightbox}
+          />
         </div>
         <Typical
-          className="b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow"
+          className={
+            "b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow " +
+            (this.state.videoLightbox ? "dn" : "")
+          }
           steps={coverText}
           loop={Infinity}
           wrapper="div"
         />
         <div className="ctaContainer flex flex-column flex-row-ns">
-          {cta.reduce((acc, val) => {
-            acc.push(
-              <div
-                key={acc.length}
-                className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
-                onClick={(function (ref) {
-                  return function () {
-                    ref.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  };
-                })(this.props.ctaRefs[acc.length].current)}
-              >
-                <span className="pr2 nowrap tc center">{val.text}</span>
-                <span className="w2"> {val.icon}</span>
-              </div>
-            );
-            return acc;
-          }, [])}
+          <div
+            key={0}
+            className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
+            onClick={(e) => this.watchVideo(e)}
+          >
+            <span className="pr2 nowrap tc center">{videoCta.text}</span>
+            <span className="w2"> {videoCta.icon}</span>
+          </div>
+          <div
+            key={1}
+            className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
+            onClick={(function (ref) {
+              return function () {
+                ref.scrollIntoView({
+                  behavior: "smooth",
+                });
+              };
+            })(this.props.ctaRefs.current)}
+          >
+            <span className="pr2 nowrap tc center">{cta.text}</span>
+            <span className="w2"> {cta.icon}</span>
+          </div>
         </div>
       </div>
     );

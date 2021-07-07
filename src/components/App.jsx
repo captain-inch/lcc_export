@@ -44,11 +44,7 @@ export default class App extends Component {
           logo={logo}
         />
         <Anchor id="Anchor_home" refprop={this.state.refs[0]} />
-        <Hero
-          timeout={5000}
-          id="home"
-          ctaRefs={[this.state.refs[1], this.state.refs[4]]}
-        />
+        <Hero timeout={5000} id="home" ctaRefs={this.state.refs[1]} />
         <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
         <Suspense
           fallback={

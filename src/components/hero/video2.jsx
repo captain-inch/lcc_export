@@ -11,6 +11,7 @@ export default class Video extends Component {
     super(props);
     this.state = { playing: true, active: 1, srcIndex1: 0, srcIndex2: 1 };
     this.onEnded = this.onEnded.bind(this);
+    this.initTriggers();
   }
 
   initTriggers() {
@@ -21,11 +22,14 @@ export default class Video extends Component {
       end: "100% 0%",
       onEnterBack: () => {
         try {
+          console.log("Video is resumed");
           this.setState({ playing: true });
         } catch (e) {}
       },
       onLeave: () => {
         try {
+          console.log("Video is stopped");
+
           this.setState({ playing: false });
         } catch (e) {}
       },
@@ -43,24 +47,15 @@ export default class Video extends Component {
       // if difference is not 1, it means one index is at zero (due to module operator), so next Index is necessarily 1
       newIndex = 1;
     }
-    console.log(
-      this.state.srcIndex1,
-      this.state.srcIndex2,
-      newIndex,
-      this.props.srcs.length
-    );
+
     return newIndex;
   }
   onEnded(e) {
     this.setState({ active: this.state.active === 1 ? 2 : 1 }, () => {
       if (this.state.active === 1) {
-        this.setState({ srcIndex2: this.getNextIndex() }, () =>
-          console.log(this.state)
-        );
+        this.setState({ srcIndex2: this.getNextIndex() });
       } else {
-        this.setState({ srcIndex1: this.getNextIndex() }, () =>
-          console.log(this.state)
-        );
+        this.setState({ srcIndex1: this.getNextIndex() });
       }
     });
   }
@@ -70,7 +65,11 @@ export default class Video extends Component {
         <div id="video1">
           <ReactPlayer
             playing={
-              this.state.playing && this.state.active === 1 ? true : false
+              !this.props.videoLightbox &&
+              this.state.playing &&
+              this.state.active === 1
+                ? true
+                : false
             }
             muted={true}
             style={{ display: this.state.active === 1 ? "block" : "none" }}
@@ -84,7 +83,11 @@ export default class Video extends Component {
         <div id="video2">
           <ReactPlayer
             playing={
-              this.state.playing && this.state.active === 2 ? true : false
+              !this.props.videoLightbox &&
+              this.state.playing &&
+              this.state.active === 2
+                ? true
+                : false
             }
             modestbranding={1}
             muted={true}
