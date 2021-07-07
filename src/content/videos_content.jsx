@@ -49,7 +49,14 @@ const v7 =
 const i7 =
   "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/thumbnail_7.png?raw=true";
 
-export const bgvideos = [v1, v2, v3, v4, v5, v6, v7];
-export const thumbnails = [i1, i2, i3, i4, i5, i6, i7];
+export const bgvideos = [
+  [v1, i1],
+  [v2, i2],
+  [v3, i3],
+  [v4, i4],
+  [v5, i5],
+  [v6, i6],
+  [v7, i7],
+];
 
 export const fullvideoURL = "https://www.youtube.com/watch?v=mhfsFSSxprw";

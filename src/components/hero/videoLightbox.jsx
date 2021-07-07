@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { gsap } from "gsap";
 import ReactPlayer from "react-player";
 import { fullvideoURL } from "../../content/videos_content";
 // Render a YouTube video player

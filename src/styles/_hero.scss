@@ -6,17 +6,14 @@
   z-index: 0;
   overflow: hidden;
 }
-.ytp-watermark {
-  display: none !important;
-}
-.backgroundVideo video,
-.backgroundVideo iframe {
-  width: 100% !important;
-  height: 100vh !important;
-  min-width: 100;
-  min-height: 100%;
-  object-fit: cover !important;
-}
+// .backgroundVideo video,
+// .backgroundVideo iframe {
+//   width: 100% !important;
+//   height: 100vh !important;
+//   min-width: 100;
+//   min-height: 100%;
+//   object-fit: cover !important;
+// }
 #videoThumbnail {
   filter: blur(20px);
 }

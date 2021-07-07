@@ -9,7 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default class Video extends Component {
   constructor(props) {
     super(props);
-    this.state = { playing: true, active: 1, srcIndex1: 0, srcIndex2: 1 };
+    this.state = {
+      playing: true,
+      active: 1,
+      srcIndex1: 0,
+      srcIndex2: 1,
+      firstvideoLoaded: false,
+    };
     this.onEnded = this.onEnded.bind(this);
     this.initTriggers();
   }
@@ -43,7 +49,6 @@ export default class Video extends Component {
     } else if (this.state.srcIndex2 - this.state.srcIndex1 === 1) {
       newIndex = (this.state.srcIndex2 + 1) % this.props.srcs.length; // latest video is video 1 ??
     } else {
-      console.log("Cas 3");
       // if difference is not 1, it means one index is at zero (due to module operator), so next Index is necessarily 1
       newIndex = 1;
     }
@@ -62,6 +67,9 @@ export default class Video extends Component {
   render() {
     return (
       <div className="backgroundVideo" style={{ width: "100vw" }}>
+        {this.state.firstvideoLoaded ? null : (
+          <img src={this.props.srcs[this.state.srcIndex1][1]} className="" />
+        )}
         <div id="video1">
           <ReactPlayer
             playing={
@@ -71,37 +79,49 @@ export default class Video extends Component {
                 ? true
                 : false
             }
-            muted={true}
-            style={{ display: this.state.active === 1 ? "block" : "none" }}
-            width="100%"
-            height="100%"
-            onEnded={this.onEnded}
-            url={this.props.srcs[this.state.srcIndex1]}
-            modestbranding={1}
-          />
-        </div>
-        <div id="video2">
-          <ReactPlayer
-            playing={
-              !this.props.videoLightbox &&
-              this.state.playing &&
-              this.state.active === 2
-                ? true
-                : false
+            onReady={() =>
+              this.setState({ firstvideoLoaded: true }, () => {
+                this.props.callbackVideoPlaying();
+              })
             }
-            modestbranding={1}
             muted={true}
+            style={{
+              display:
+                this.state.firstvideoLoaded && this.state.active === 1
+                  ? "block"
+                  : "none",
+            }}
             width="100%"
             height="100%"
-            style={{
-              display: this.state.active === 2 ? "block" : "none",
-              minWidth: "100vw",
-              minHeight: "100vh",
-            }}
             onEnded={this.onEnded}
-            url={this.props.srcs[this.state.srcIndex2]}
+            url={this.props.srcs[this.state.srcIndex1][0]}
+            modestbranding={1}
           />
         </div>
+        {this.state.firstvideoLoaded ? (
+          <div id="video2">
+            <ReactPlayer
+              playing={
+                !this.props.videoLightbox &&
+                this.state.playing &&
+                this.state.active === 2
+                  ? true
+                  : false
+              }
+              modestbranding={1}
+              muted={true}
+              width="100%"
+              height="100%"
+              style={{
+                display: this.state.active === 2 ? "block" : "none",
+                minWidth: "100vw",
+                minHeight: "100vh",
+              }}
+              onEnded={this.onEnded}
+              url={this.props.srcs[this.state.srcIndex2][0]}
+            />
+          </div>
+        ) : null}
       </div>
     );
   }

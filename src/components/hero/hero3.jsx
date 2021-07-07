@@ -16,7 +16,7 @@ export default class Hero extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      srcs: [],
+      srcs: [[]],
       videoLightbox: false,
     };
   }
@@ -61,12 +61,13 @@ export default class Hero extends Component {
           <Video
             srcs={this.state.srcs}
             videoLightbox={this.state.videoLightbox}
+            callbackVideoPlaying={this.props.callbackVideoPlaying} // Triggers the loading of other components when first video is playing
           />
         </div>
         <Typical
           className={
             "b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow " +
-            (this.state.videoLightbox ? "dn" : "")
+            (this.state.videoLightbox ? "o-0" : "")
           }
           steps={coverText}
           loop={Infinity}
