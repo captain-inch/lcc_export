@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactPlayer from "react-player";
+import Loader from "react-loader-spinner";
 
 // Render a YouTube video player
 gsap.registerPlugin(ScrollTrigger);
@@ -68,10 +69,20 @@ export default class Video extends Component {
     return (
       <div className="backgroundVideo" style={{ width: "100vw" }}>
         {this.state.firstvideoLoaded ? null : (
-          <img
-            src={this.props.srcs[this.state.srcIndex1][1]}
-            id={"thumbnailPreview"}
-          />
+          <div className="flex justify-center items-center">
+            <img
+              src={this.props.srcs[this.state.srcIndex1][1]}
+              id={"thumbnailPreview"}
+            />
+            <Loader
+              type="TailSpin"
+              color="#cccccc"
+              className="absolute"
+              visible={true}
+              height={100}
+              width={100}
+            />
+          </div>
         )}
         <div id="video1">
           <ReactPlayer

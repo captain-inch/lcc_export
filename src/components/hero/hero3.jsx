@@ -16,6 +16,7 @@ export default class Hero extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstVideoLoaded: false,
       srcs: [[]],
       videoLightbox: false,
     };
@@ -61,19 +62,26 @@ export default class Hero extends Component {
           <Video
             srcs={this.state.srcs}
             videoLightbox={this.state.videoLightbox}
-            callbackVideoPlaying={this.props.callbackVideoPlaying} // Triggers the loading of other components when first video is playing
+            callbackVideoPlaying={() => {
+              this.setState(
+                { firstVideoLoaded: true },
+                this.props.callbackVideoPlaying()
+              );
+            }} // Triggers the loading of other components when first video is playing
           />
         </div>
-        <Typical
-          className={
-            "b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow " +
-            (this.state.videoLightbox ? "o-0" : "")
-          }
-          steps={coverText}
-          loop={Infinity}
-          wrapper="div"
-        />
-        <div className="ctaContainer flex flex-column flex-row-ns">
+        {this.state.firstVideoLoaded ? (
+          <Typical
+            className={
+              "b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow " +
+              (this.state.videoLightbox ? "o-0" : "")
+            }
+            steps={coverText}
+            loop={Infinity}
+            wrapper="div"
+          />
+        ) : null}
+        <div className="ctaContainer flex flex-column items-center flex-row-ns pb5 pb1-ns">
           <div
             key={0}
             className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
