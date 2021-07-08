@@ -81,7 +81,7 @@ export default class Hero extends Component {
             wrapper="div"
           />
         ) : null}
-        <div className="ctaContainer flex flex-column items-center flex-row-ns pb5 pb1-ns">
+        <div className="ctaContainer flex flex-column items-center flex-row-ns pb4 pb1-ns">
           <div
             key={0}
             className="ctaItem flex items-center pointer w-100 ma3 mb5-l mb4-m f4-l f5 grow br2 ba bw1 ph3 pv2 dib white bg-black-30 hover-bg-black-60 bgblur"
