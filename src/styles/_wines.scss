@@ -71,17 +71,45 @@ $gridgad: 130px;
   direction: ltr;
 }
 
-// .wineRightContent {
-//   @extend %wineContent;
-//   left: 75px;
-//   // left: calc(-20px + 20vw);
-// }
+.testimonial::before,
+.testimonial::after {
+  position: absolute;
+  font-size: 14rem;
+  color: #90928f;
+  opacity: 0.4;
+  line-height: 1;
+  z-index: 1;
+  font-family: sans-serif;
+}
+.testimonial::before {
+  content: "\201c";
+  top: 0;
+  left: -2rem;
+  @media screen and (min-width: 30em) and (max-width: 60em) {
+    left: -5rem;
+  }
+  height: 1rem;
+}
+.testimonial::after {
+  content: "\201d";
+  top: 7rem;
+  right: -2rem;
+  @media screen and (min-width: 30em) and (max-width: 60em) {
+    right: -5rem;
+  }
+  height: 1rem;
+}
 
-// .wineLeftContent {
-//   @extend %wineContent;
-//   text-align: right;
-
-//   right: 100px;
-//   // right: calc(-20px + 20vw);
-//   // margin-right: 8vw;
-// }
+.testimonialAuthor {
+  width: 10em;
+  margin-top: -3.5em;
+  //margin-bottom: -1em;
+}
+.badgeText {
+  z-index: 5;
+  position: absolute;
+  margin-top: -2em;
+  right: 0.2em;
+}
+.badgeGrade {
+}

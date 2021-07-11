@@ -8,6 +8,9 @@ import {
 } from "../../content/wines_content.jsx";
 import { initAnimationsWines } from "../animations.js";
 import ReadMoreReact from "read-more-react";
+import Testimonial from "./testimonial.jsx";
+import { testimonials } from "../../content/testimonials_content.jsx";
+import { accessSync } from "fs";
 
 const minimumLength = 100;
 const idealLength = 150;
@@ -40,7 +43,6 @@ export default class Wines extends Component {
     this.setState({ activeAll: false, hoverId: wineFamilyId });
   }
   mouseLeave(e) {
-    console.log("Leaving " + e.target);
     this.setState({ activeAll: true });
   }
   render() {
@@ -53,7 +55,7 @@ export default class Wines extends Component {
             acc.push(
               <div
                 className={
-                  "wineFamily w-30-ns " +
+                  "wineFamily w-30-ns flex flex-column items-center justify-center" +
                   // eslint-disable-next-line eqeqeq
                   (this.state.activeAll || this.state.hoverId == acc.length
                     ? "notdimmed"
@@ -77,7 +79,7 @@ export default class Wines extends Component {
                 </h2>
                 <div
                   key={acc.length}
-                  className="ctaItem flex items-center w4 center pointer ma2 ma3-ns f5-l f6 i grow br2 ba bw1 ph3 pv2 dib black hover-white hover-bg-black-60 bgblur"
+                  className="flex items-center w4 center pointer ma2 ma3-ns f5-l f6 i grow br2 ba bw1 ph3 pv2 dib black hover-white hover-bg-black-60 bgblur"
                   onClick={(function (i, refs) {
                     return function () {
                       console.log(i);
@@ -87,7 +89,7 @@ export default class Wines extends Component {
                     };
                   })(acc.length, this.state.refs)}
                 >
-                  <span className="pr2 nowrap tc center mr5">See wines</span>
+                  <span className="pr2 nowrap tc ">See wines</span>
                   <span className="w3 ">{wineIcon}</span>
                 </div>
                 <div className="pa1 mt0 tc i mb5 mb2-ns">
@@ -105,31 +107,45 @@ export default class Wines extends Component {
             return acc;
           }, [])}
         </div>
+        <div className="flex flex-column flex-row-l items-center">
+          {testimonials.reduce((acc, val) => {
+            acc.push(<Testimonial data={val} id={acc.length} />);
+            return acc;
+          }, [])}
+        </div>
         <Anchor refprop={this.state.refs[0]} />
-        <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">Whites</h2>
-        <div id="wineList" className="mt5 mb5">
-          <Wine id={0} content={winesList[0]} metaTitle={"Blancs"} />
-          <Wine id={1} content={winesList[1]} />
-          <Wine id={2} content={winesList[2]} />{" "}
-        </div>
-        <Anchor refprop={this.state.refs[1]} />
+        <div>
+          <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
+            Minervois La Livinière
+          </h2>
+          <div id="wineList" className="mt5 mb5">
+            <Wine
+              id={0}
+              content={winesList[0]}
+              metaTitle={"Minervois La Livinière"}
+            />
+            <Wine id={1} content={winesList[1]} />
+            <Wine id={2} content={winesList[2]} />{" "}
+          </div>
+          <Anchor refprop={this.state.refs[1]} />
 
-        <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
-          Minervois La Livinière
-        </h2>
-        <div id="wineList" className="mt5 mb5">
-          <Wine id={3} content={winesList[3]} metaTitle={"Minervois Rouge"} />
-          <Wine id={4} content={winesList[4]} />
-          <Wine id={5} content={winesList[5]} />
-        </div>
-        <Anchor refprop={this.state.refs[2]} />
-        <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
-          Minervois Rouge
-        </h2>
-        <div id="wineList" className="mt5 mb5">
-          <Wine id={6} content={winesList[6]} metaTitle={"Minervois Rouge"} />
-          <Wine id={7} content={winesList[7]} />
-          <Wine id={8} content={winesList[8]} />
+          <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
+            Minervois Rouge
+          </h2>
+          <div id="wineList" className="mt5 mb5">
+            <Wine id={3} content={winesList[3]} metaTitle={"Minervois Rouge"} />
+            <Wine id={4} content={winesList[4]} />
+            <Wine id={5} content={winesList[5]} />
+          </div>
+          <Anchor refprop={this.state.refs[2]} />
+          <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
+            Others
+          </h2>
+          <div id="wineList" className="mt5 mb5">
+            <Wine id={6} content={winesList[6]} metaTitle={"Others"} />
+            <Wine id={7} content={winesList[7]} />
+            <Wine id={8} content={winesList[8]} />
+          </div>
         </div>
       </div>
     );

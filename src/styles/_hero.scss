@@ -18,7 +18,7 @@
 #thumbnailPreview {
   filter: blur(20px);
   min-width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   object-fit: cover;
 }
 #coverText {

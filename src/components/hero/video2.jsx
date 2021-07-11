@@ -29,14 +29,11 @@ export default class Video extends Component {
       end: "100% 0%",
       onEnterBack: () => {
         try {
-          console.log("Video is resumed");
           this.setState({ playing: true });
         } catch (e) {}
       },
       onLeave: () => {
         try {
-          console.log("Video is stopped");
-
           this.setState({ playing: false });
         } catch (e) {}
       },
