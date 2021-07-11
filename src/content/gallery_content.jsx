@@ -97,8 +97,8 @@ export const gallerySettings = [
     width: 1347,
   },
   {
-    src: "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSCF0183.jpgDSCF0183.jpg?raw=true",
-    height: 900,
-    width: 1347,
+    src: "https://github.com/captain-inch/lcc_export/blob/main/src/media/img/gallery/DSCF0183.jpg?raw=true",
+    height: 3500,
+    width: 2334,
   },
 ];
