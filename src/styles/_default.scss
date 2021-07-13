@@ -43,7 +43,10 @@ a {
   max-width: 90vw;
   max-height: 90vh;
 }
-
+p,
+.prewrap {
+  white-space: pre-wrap;
+}
 h1,
 h2,
 h3,

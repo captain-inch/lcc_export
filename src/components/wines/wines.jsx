@@ -144,7 +144,6 @@ export default class Wines extends Component {
           <div id="wineList" className="mt5 mb5">
             <Wine id={6} content={winesList[6]} metaTitle={"Others"} />
             <Wine id={7} content={winesList[7]} />
-            <Wine id={8} content={winesList[8]} />
           </div>
         </div>
       </div>

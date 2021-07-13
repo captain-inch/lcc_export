@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import { storyContent } from "./../content/story_content.jsx";
+
 import {
   teamHeader,
   teamDetail,
-  storyContent,
-} from "./../content/story_content.jsx";
-
-import { oenologists, family } from "../content/team_content.jsx";
+  afterTrio,
+  oenologists,
+  family,
+} from "../content/team_content.jsx";
 
 import { initAnimationsStory } from "./animations.js";
 import ReadMoreReact from "read-more-react";
@@ -46,7 +48,8 @@ export default class Story extends Component {
             );
             return acc;
           }, [])}
-        </p>{" "}
+        </p>
+        {/* PRESENTATION TRIO + FRED */}
         <div className="flex flex-row flex-wrap justify-around">
           {teamDetail.reduce((acc, val) => {
             acc.push(
@@ -69,7 +72,10 @@ export default class Story extends Component {
             );
             return acc;
           }, [])}
+          <div className="center tj pa2 pa3-ns mw7 w-100">{afterTrio}</div>
         </div>
+        {/* oenologists*/}
+
         <div id="oenologists">
           <h3>{oenologists.title}</h3>
           <p className="mw7 tj center pa2">{oenologists.text}</p>
@@ -102,6 +108,8 @@ export default class Story extends Component {
             }, [])}
           </div>{" "}
         </div>
+        {/* Family*/}
+
         <div id="family">
           <h3 className="mb2 mw7 center">{family.title}</h3>
           <p className="mw7 tj center pa2">{family.text}</p>

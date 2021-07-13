@@ -4,8 +4,7 @@ export const content = [
   {
     title: "La confrérie des domaines",
     logo: confrerie,
-    text:
-      " Teaming up for international marketing of Domaine Michelin – Les Combes Cachées, outside France.",
+    text: "In order to secure its international development, Domaine Michelin – Les Combes Cachées has decided to team up with a dedicated leading structure: “La Confrérie des Domaines”. The Confrérie des Domaines was born from collective winegrowing initiatives in Chablis and Languedoc. Over the years, it has developed and strengthened with the confidence of producers, representing each French region. \nThe Confrérie des Domaines is a very professional commercial structure devoted 100% to the international distribution of wines from 40 wine estates, located in all French wine regions. Domaine Michelin is offering premium organic Languedoc wines.",
     button: {
       href: "https://www.confrerie-domaines.com/fr/accueil/",
       text: "Visit their website",

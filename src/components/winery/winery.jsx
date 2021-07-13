@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MyGallery from "./gallery.jsx";
-import { winery_content } from "../../content/winery_content.jsx";
+import { winery_content, winery_title } from "../../content/winery_content.jsx";
 import ReadMoreReact from "read-more-react";
 import banner from "./../../media/img/misc/bgbanner.jpg";
 import { initAnimationsWinery } from "../animations.js";
@@ -25,7 +25,7 @@ export default class Winery extends Component {
               margin: 0,
             }}
           >
-            winery
+            {winery_title}
           </h1>
           <div
             className="w-100"
@@ -53,7 +53,7 @@ export default class Winery extends Component {
                 <div className="w5 h5 overflow-hidden flex flex-column justify-center">
                   <img className="grow" src={val.img} alt={val.name} />
                 </div>
-                <div className="tj">
+                <div className="tj prewrap">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}

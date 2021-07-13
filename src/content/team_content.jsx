@@ -8,63 +8,54 @@ import nicolasD from "./../media/img/team/nicolasD.jpg";
 import paula from "./../media/img/team/paula.jpg";
 import group from "./../media/img/team/family.jpg";
 
-export const xav = xavier;
 export const teamHeader = {
   img: trio,
-  title: "Xavier, François & Michel",
-  text: "A 30 y.o friendship.",
+  title: "A STORY OF PASSION",
 };
-
 export const teamDetail = [
   {
     name: "Xavier Michelin",
     img: xavier,
-    text:
-      "Xavier was initially a farmer, producing cereals in the region of Toulouse. He has a large experience of agriculture and ground terrain. Within Domaine Michelin- Les Combes Cachées, he is now driving all operations in the vineyard, and also driving tractors.",
+    text: "Xavier Michelin was a cereal producer in the region of Toulouse. Agriculture and growing stuff is definitely his thing! Within the Domaine Michelin - Les Combes Cachées, he’s naturally the one in charge of all operations in the vineyard… if you pass by, you’ll probably see him driving a big tractor across the estate, or any kind of other agricultural machinery. His past experience as a rally racer is undoubtedly a real asset!",
   },
   {
     name: "Michel Pousse",
     img: michel,
-    text:
-      "Michel, geographer, has been doing international business worldwide, for 30 years, in the field of space industry and meteorology. He is now driving wine making, wine marketing and sales.",
+    text: "Michel Pousse, initially geographer (PHD), has a 30-year experience in international business in the fields of space industry and meteorology (Spot Image, Meteo France International). Within Domaine Michelin-Les Combes Cachées, Michel is now in charge of vinification, wine marketing and sales. He went through specific training for wine making in Université du Vin, in Suze la Rousse near Avignon.  Michel loves this new life, and if you pass by, you’ll probably see him walking through the vineyards, contemplating the exceptional characteristics of the Combes Cachées’ soil... That’s what geographers do!",
   },
   {
     name: "François Aumonier",
     img: francois,
-    text:
-      "François, initially agronomist, has had a long career in the marketing of high technologies and business management. He is now taking care of administration and finance for Domaine Michelin Les Combes Cachées.",
+    text: "François Aumonier, initially agronomist, has a long career in the marketing of high technologies and business management. He is now taking care of administration and finance for Domaine Michelin-Les Combes Cachées. François’ favorite joke is to say that, unlike Xavier and Michel, he is doing absolutely nothing for Domaine Michelin - Les Combes Cachées… Nothing, except non-significant and funny tasks such as custom declarations, accounting and all sorts of obscure paperwork that Xavier and Michel would hate to have to handle!",
   },
-
   {
     name: "Frederic Justeau",
     img: fred,
-    text:
-      "Frederic a.k.a Fred, is the swiss knife of the Domaine. Fred has a very comprehensive experience in all fields of a winery, as well in the vines as in the cellar. He has been in charge of wine making in New Zealand, Australia, South Africa and various regions of France including famous estates. Within Domaine Michelin Les Combes Cachées, he is in charge of all operations in the vineyard and in the cellar, and loves the diversity of his job.",
+    text: "Frederic Justeau, alias Fred, is the “Swiss Knife” of the estate. Understand that no aspect of the life of a wine estate has a secret for him! From manual work in the vines to delicate winemaking operations in the cellar, Fred masters it all. Before joining the Domaine Michelin - Les Combes Cachées, he worked for various wine estates in New Zealand, Australia, South Africa and various regions of France, including famous estates. He is now in charge of all operations in the vineyard, as well as in the cellar. He loves the diversity of his job and when he is around, you can be sure that every problem will find its solution!",
   },
 ];
 
+export const afterTrio =
+  "But although Xavier, Michel and François each have their “specialty” within the Domaine Michelin-Les Combes Cachées, they work as a united team and always make concerted decisions… never forgetting that this whole project all started with a friendship story.";
+
 export const oenologists = {
   title: "Our oenologists team ",
-  text:
-    "Since 2020 Domaine Michelin Les Combes Cachées has established a partnership with a leading oenological laboratory for Southern France, Laboratoire Dubernet, based near Narbonne. Laboratoire Dubernet is at the forefront of oenological science with many innovations and related services in all fields. They do comply with most demanding international standards ISO 17025, COFRAC… \nLaboratoire Dubernet is providing to Domaine Michelin-Les Combes Cachées all along the year advice and analytical follow up for wine making, aging and bottling, with a team of not less than 3 experienced oenologist, each one with its own duty:",
+  text: "Since 2020, Domaine Michelin - Les Combes Cachées has established a partnership with a leading oenological laboratory: the Laboratoire Dubernet, located near Narbonne – Southern France. Their role is to provide permanent assistance and advice to the estate in terms of wine making, aging and bottling. Domaine Michelin - Les Combes Cachées can count on the expertise of 3 experienced oenologists:",
   members: [
     {
       src: nicolasT,
       name: "Nicolas Triviaux",
-      text:
-        "Agronomist, specialized in oenology. Wine maker in Southern France, California, New Zealand, Australia. Since 2010 Nicolas has been in charge of wine making operations and management in several big wineries of Languedoc region ( Minervois, Corbières, Cabardès). Joined Dubernet in 2021 as oenologist, advisor..",
+      text: "Oenologist, advisor - 13 years of wine making in Chile, California, Australia and France.",
     },
     {
       src: paula,
       name: "Paula Godoy",
-      text:
-        "Agronomist, graduated in Chile, specialized in oenology. Extensive experience with many winery of all size in Chile (Anakena , Concha y Toro, Casa Lapostolle etc.), California, Australia and France (Paul Mas, etc...). Joined Dubernet in 2020 as oenologist, advisor..",
+      text: "Oenologist, advisor - 13 years of wine making in Chile, California, Australia and France.",
     },
     {
       src: nicolasD,
       name: "Nicolas Dutour",
-      text:
-        "Agronomist and oenologist, graduated in 2007. Wine making experience in Southern France, California and Brazil. Nicolas  has had management responsabilities in Languedoc region (Domaines Auriol). Nicolas joined Laboratoire Dubernet in 2013 as oenologist, senior advisor.",
+      text: "Senior advisor - 14 years of wine making in Southern France, California and Brazil.",
     },
   ],
 };
@@ -73,6 +64,5 @@ export const family = {
   src: group,
   title:
     "Boris, Thibault, Etienne, Martin, Christine, Maria and team, among others...",
-  text:
-    "Apart from permanent staff, many people are involved in various aspects of the Winery life. Starting with founders own family members. Boris and Thibault, Xavier’s sons, have been working for a very significant time in the vines for daily work, harvest or cellar’s work. Martin, Camille and Etienne, Michel’s children,  have been involved in other duties like wine cellar equipment for Martin and marketing support and web site conception for Camille and Etienne…  And also many temporary staff is  contributing to winter, spring or hand picking. Like Maria and his family, living nearby ad often involved in vine work. Without seasonal staff we would obviously not be in a position to face the peak of activities in the vines.",
+  text: "The Domaine Michelin - Les Combes Cachées has always been a collective adventure. So of course, there are the founders and the permanent staff… but since the beginning, there have always been benevolent people who have gravitated around the project, making their own contribution to the winery life. Starting with the founders’ family members of course:\n- Boris and Thibault, Xavier’s sons. They both have spent a lot of time in the vines for harvest, in the cellar for various tasks.\n- Martin, Camille and Etienne, Michel’s children. Martin is involved in the material and equipment of the cellar, while Camille and Etienne provide their support on communications and marketing matters. Not forgetting Christine, Michel’s wife, always ready to give a hand, whatever the need!\n\nAnd of course, the picture would not be complete, if we forgot to mention the temporary staff who joins the winery at every harvest season. Over the years, special relationships have been established, like the one with Maria and her family, who live right nearby and whose regular participation allows the estate to face its activity peaks. ",
 };

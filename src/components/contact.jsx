@@ -5,6 +5,13 @@ import {
   websiteCreatorUrl,
 } from "./../content/contact_content.jsx";
 import { initAnimationsContact } from "./animations.js";
+
+import ReadMoreReact from "read-more-react";
+
+const minimumLength = 100;
+const idealLength = 150;
+const maximumLength = 220;
+
 // import { storyContent } from "./../content/story_content.jsx";
 export default class Contact extends Component {
   componentDidMount() {
@@ -40,7 +47,15 @@ export default class Contact extends Component {
                 <div className="w-70 h5 overflow-hidden flex flex-column justify-center items-center">
                   <img className="grow" src={val.logo} alt={val.title} />
                 </div>
-                <p className="tj">{val.text}</p>
+                <div className="mb3 tj">
+                  <ReadMoreReact
+                    text={val.text}
+                    min={minimumLength}
+                    ideal={idealLength}
+                    max={maximumLength}
+                    readMoreText="Read more"
+                  />
+                </div>
                 {val.button ? (
                   <a
                     className="flex items-center f5 link dim br2 ba bw1 ph3 pv2 mb2 dib black"

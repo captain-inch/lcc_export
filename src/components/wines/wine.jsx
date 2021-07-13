@@ -39,10 +39,6 @@ export default class Wine extends Component {
               {" "}
               {this.props.content.text}
             </div>
-            <div className="f5 i f4-ns black mt3-ns mt2">
-              {" "}
-              {this.props.content.headerText}
-            </div>
           </div>
         </div>
       </div>

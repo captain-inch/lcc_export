@@ -1,65 +1,70 @@
-import im1 from "./../media/img/wines/MLL 3 ecus.png";
-import im2 from "./../media/img/wines/MB CV.png";
+import soleilrouge from "./../media/img/wines/MLL SR.png";
+import troisecus from "./../media/img/wines/MLL_Michelin_3ecus.png";
+import generations from "./../media/img/wines/MLL_Michelin_Elias.png";
+import curiosite from "./../media/img/wines/MR CL.png";
+import hautsdesiran from "./../media/img/wines/MR_Michelin_HDS.png";
+import combeviolon from "./../media/img/wines/MB CV.png";
+import viognier from "./../media/img/wines/VIO LM.png";
+import rose from "./../media/img/wines/ROSE PF.png";
 import overview_1 from "./../media/img/wines/overview_1.jpg";
 import overview_2 from "./../media/img/wines/overview_2.jpg";
 import overview_3 from "./../media/img/wines/overview_3.jpg";
 
 export const winesList = [
   {
-    headerText: "Minervois La Livinière - Les 3 écus",
-    text: "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
-    img: im1,
+    headerText: "Soleil Rouge",
+    text: "Soleil Rouge, while keeping the specific elegance of Cru Livinière wines, offers a crunchy fruit and velvet mouth. A Livinière wine that you can drink young without waiting, with volume and freshness. This wine has two secrets: limited use of wood, with partial use of three years oak barrels; and use of Cinsault in the final blend, in order to provide more crunchy fruit… The result is there: Soleil Rouge offers a modern and attractive style of Livinière Cru.",
+    img: soleilrouge,
   },
   {
-    headerText: "Minervois Blanc - Combe Violon",
-    text: "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original.",
-    img: im2,
-  },
-  {
-    headerText: "Minervois La Livinière - Les 3 écus",
-    text: "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
-    img: im1,
-  },
-  {
-    headerText: "Minervois Blanc - Combe Violon",
-    text: "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original. ",
-    img: im2,
+    headerText: "Les Trois Ecus",
+    text: "Les Trois Écus is Domaine Michelin’s classic style of Livinière Cru. An elegant and fruity wine, with volume and persistence. It is the result of 18 months aging minimum, including 12 months in 300L French Oak Barrels, with one third of new barrels every year. The selection of the new barrels is made very carefully, every year, according to the profile of the vintage. We aim at selecting barrels which will bring complexity and aging potential to the wine, without masking the aromas. We want to keep fruit after aging… Les Trois Écus wines are ready to drink when put on the market. But they will take benefit of additional time in your cellar for aging if you are patient enough.",
+    img: troisecus,
   },
   {
     headerText: "Minervois La Livinière - Les 3 écus",
-    text: "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
-    img: im1,
+    text: "Générations is the brand name for our “Tête de Cuvée”. The most outstanding wine we can produce for a given vintage. The final name of the Cuvée depends on the year. “Axel” (2015), “Elias” (2016), “Yuna” (2017), “Malone” (2018), “Anouk” (2020). These are the names of our grandsons and granddaughters, born these last years. Lucky us… \nThis Cuvée is the selection, each year, of the very best barrels of the vintage in very limited volumes: 800 to 1000 bottles only. At the end of the aging of the vintage, we taste individually each barrel. And every year, we find gems: some of the barrels are exceptional and allow to produce a top-quality blend. Générations Cuvée is therefore a very unique Cuvée, different every year, every year at the top.",
+    img: generations,
   },
   {
-    headerText: "Minervois La Livinière - Les 3 écus",
-    text: "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
-    img: im1,
+    headerText: "La Curiosité de Lauriole",
+    text: "“La Curiosité de Lauriole” is a touristic spot in our region. It is also the place where our vines for this Cuvée are located. This wine provides immediate tasting pleasure, with intense nose of red fruits with mouth all in sweetness. This is an easy wine to drink for aperitif or ideal for barbecues. You can also serve it lightly chilled at 14° during summer…  Its vinification by partial carbonic maceration allows the extraction of maximum aromas.",
+    img: curiosite,
   },
   {
-    headerText: "Minervois Blanc - Combe Violon",
-    text: "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original.",
-    img: im2,
+    headerText: "Hauts de Siran",
+    text: "“Les Hauts de Siran” is a generous wine, with intense nose of red and black fruits, and spices. Powerful and long mouth with significant volume and sweetness. A very attractive Languedoc wine to be drunk on its own, or to be served with all kinds of food. “Les Hauts de Siran” reveals a typical freshness derived from altitude vines (300m above sea level), with unique terroirs and ideal maturation.",
+    img: hautsdesiran,
   },
   {
-    headerText: "Minervois La Livinière - Les 3 écus",
-    text: "Nez complexe, de fruits noirs (myrtille, pruneaux, cassis) de torréfaction (chocolat) avec des subtiles notes de boite à cigares et de garrigue. L’attaque est ronde et puissante, suivie d'un milieu de bouche structuré tout en restant élégant. Fraîcheur apparaît en fin de bouche, et offre une finale équilibrée. Fin de bouche longue et persistante sur les épices, le thym sauvage et le pain grillé.",
-    img: im1,
+    headerText: "Combe Violon",
+    text: "« Combe Violon” is the name of one our “hidden combes”, lost in the garrigue, producing a confidential wine:  1/2 ha of White Grenache and Roussanne. The fresh and ventilated terroir, 350m high, with limestone soil, produces a mineral, elegant ang very persistent white wine, with white flowers and fruits aromas. Very limited production (2000 bottles a year, on average). A typical wine for gastronomy, ideal with refined dishes, such as fish, white meat, goat cheese…",
+    img: combeviolon,
   },
   {
-    headerText: "Minervois Blanc - Combe Violon",
-    text: "Un original blanc du sud, blanc de gastronomie : fraicheur, fruit, complexité, longueur en bouche…Le parfait compagnon des poissons délicats, grillés ou en sauce, des coquilles saint jacques poêlées, des volailles à la crème, des fromages particulièrement de chèvre. Rare et original. ",
-    img: im2,
+    headerText: "La Martelle & Le Bois de La Martelle",
+    text: "“La Martelle” is the name of the vine from which we produce our 100% Viognier wine. This terroir is classified in Cru La Livinière, excellent terroir, but was planted in Viognier. An easy to drink, fresh, fruity and full-bodied white, ideal for drinking as such, or for any summer food, fish, cheese. We also produce, out of the same plot, a barrel (400L) aged version called “Le Bois de la Martelle”. The wood aging provides more complexity and power to the wine, while keeping freshness and fruit, with typical gastronomic profile…",
+    img: viognier,
+  },
+  {
+    headerText: "Small Cuvées",
+    text: "Every year, according to our mood and to the vintage conditions, we like to try to produce limited small Cuvées: Minervois rosé, sweet wine from our Viognier, or 100% Carignan from our beautiful terroir of La Galine. These are limited editions, under 1000 bottles, made only for our pleasure and your curiosity, and sold to our customers, on the local market. Come and visit us, we will be thrilled to share them with you… ",
+    img: rose,
   },
 ];
 
 export const winesOverview = [
-  { img: overview_1, title: "Whites", text: "blabla lorem ipsum..." },
+  {
+    img: overview_1,
+    title: "Whites",
+    text: "",
+  },
   {
     img: overview_2,
     title: "Minervois La Livinière",
-    text: "blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum... blabla lorem ipsum...",
+    text: "",
   },
-  { img: overview_3, title: "Red", text: "blabla lorem ipsum..." },
+  { img: overview_3, title: "Red", text: "" },
 ];
 
 export const wineIcon = (
