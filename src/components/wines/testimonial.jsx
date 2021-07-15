@@ -13,10 +13,7 @@ export default class Testimonial extends Component {
   //   badge: "Top picks",
   render() {
     return (
-      <div
-        className="flex flex-column mw7 w-100 pa2 ml4 mr4 mb5 mb5-m mb2-l justify-center items-center dimBg waveBg2"
-        key={this.props.id}
-      >
+      <div className="flex flex-column mw7 w-100 pa2 ml4 mr4 mb5 mb5-m mb2-l justify-center items-center dimBg waveBg2">
         <h4 className=" mt3 mb4 f4 h3 tc flex flex-column justify-center">
           {this.props.data.title}
         </h4>

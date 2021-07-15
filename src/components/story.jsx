@@ -50,28 +50,30 @@ export default class Story extends Component {
           }, [])}
         </p>
         {/* PRESENTATION TRIO + FRED */}
-        <div className="flex flex-row flex-wrap justify-around">
-          {teamDetail.reduce((acc, val) => {
-            acc.push(
-              <div
-                key={acc.length}
-                className="teamItem flex flex-column w5 ma2"
-              >
-                <h4 className="mt3 mb3">{val.name}</h4>
-                <img className="shadow-3 grow" src={val.img} alt={val.name} />
-                <div className="tj mt3">
-                  <ReadMoreReact
-                    text={val.text}
-                    min={minimumLength}
-                    ideal={idealLength}
-                    max={maximumLength}
-                    readMoreText="Read more"
-                  />
+        <div className="flex flex-column">
+          <div className="flex flex-row flex-wrap justify-around">
+            {teamDetail.reduce((acc, val) => {
+              acc.push(
+                <div
+                  key={acc.length}
+                  className="teamItem flex flex-column w5 ma2"
+                >
+                  <h4 className="mt3 mb3">{val.name}</h4>
+                  <img className="shadow-3 grow" src={val.img} alt={val.name} />
+                  <div className="tj mt3">
+                    <ReadMoreReact
+                      text={val.text}
+                      min={minimumLength}
+                      ideal={idealLength}
+                      max={maximumLength}
+                      readMoreText="Read more"
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-            return acc;
-          }, [])}
+              );
+              return acc;
+            }, [])}
+          </div>
           <div className="center tj pa2 pa3-ns mw7 w-100">{afterTrio}</div>
         </div>
         {/* oenologists*/}

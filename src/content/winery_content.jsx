@@ -1,4 +1,4 @@
-import organic from "./../media/img/misc/organic.jpg";
+//import organic from "./../media/img/misc/organic.jpg";
 import cellar from "./../media/img/misc/cellar.jpg";
 import making from "./../media/img/misc/making.jpg";
 import spirit from "./../media/img/misc/spirit.jpg";

@@ -10,7 +10,6 @@ import { initAnimationsWines } from "../animations.js";
 import ReadMoreReact from "read-more-react";
 import Testimonial from "./testimonial.jsx";
 import { testimonials } from "../../content/testimonials_content.jsx";
-import { accessSync } from "fs";
 
 const minimumLength = 100;
 const idealLength = 150;
@@ -109,7 +108,9 @@ export default class Wines extends Component {
         </div>
         <div className="flex flex-column flex-row-l items-center">
           {testimonials.reduce((acc, val) => {
-            acc.push(<Testimonial data={val} id={acc.length} />);
+            acc.push(
+              <Testimonial data={val} key={"testimonial_" + acc.length} />
+            );
             return acc;
           }, [])}
         </div>

@@ -23,7 +23,6 @@ TO DO :
   */
 export default class App extends Component {
   constructor(props) {
-    console.time();
     super(props);
     let refs = [];
     for (let i = 0; i < links.length; i++) {
@@ -32,14 +31,12 @@ export default class App extends Component {
     this.state = { route: "#home", refs, videoLoading: true };
     this.callbackVideoPlaying = this.callbackVideoPlaying.bind(this);
   }
-  componentDidMount() {
-    initAnimationsAnchor(links, this);
-  }
-  callbackVideoPlaying() {
-    console.timeLog();
 
+  callbackVideoPlaying() {
     console.log("First video is now playing, loading other components !");
-    this.setState({ videoLoading: false });
+    this.setState({ videoLoading: false }, () =>
+      initAnimationsAnchor(links, this)
+    );
   }
   render() {
     return (
@@ -57,94 +54,92 @@ export default class App extends Component {
           ctaRefs={this.state.refs[1]}
           callbackVideoPlaying={this.callbackVideoPlaying}
         />
-        {this.state.videoLoading ? null : (
-          <div>
-            {" "}
-            <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
-            <Suspense
-              fallback={
-                <div
-                  className="h5 bg--yellow"
-                  style={{ display: "grid", placeContent: "center" }}
-                >
-                  <h3>Loading ...</h3>
-                  <Loader
-                    type="TailSpin"
-                    color="#cccccc"
-                    className=""
-                    visible={this.state.loaded ? false : true}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              }
-            >
-              <Story />
-            </Suspense>
-            <Anchor id="Anchor_winery" refprop={this.state.refs[2]} />
-            <Suspense
-              fallback={
-                <div
-                  className="h5 bg--yellow"
-                  style={{ display: "grid", placeContent: "center" }}
-                >
-                  <h3>Loading ...</h3>
-                  <Loader
-                    type="TailSpin"
-                    color="#cccccc"
-                    className=""
-                    visible={this.state.loaded ? false : true}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              }
-            >
-              <Winery />
-            </Suspense>
-            <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
-            <Suspense
-              fallback={
-                <div
-                  className="h5 bg--yellow"
-                  style={{ display: "grid", placeContent: "center" }}
-                >
-                  <h3>Loading ...</h3>
-                  <Loader
-                    type="TailSpin"
-                    color="#cccccc"
-                    className=""
-                    visible={this.state.loaded ? false : true}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              }
-            >
-              <Wines refprop={this.state.refs[3]} className="wines" />
-            </Suspense>
-            <Anchor id="Anchor_contact" refprop={this.state.refs[4]} />
-            <Suspense
-              fallback={
-                <div
-                  className="h5 bg--yellow"
-                  style={{ display: "grid", placeContent: "center" }}
-                >
-                  <h3>Loading ...</h3>
-                  <Loader
-                    type="TailSpin"
-                    color="#cccccc"
-                    className=""
-                    visible={this.state.loaded ? false : true}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              }
-            >
-              <Contact />
-            </Suspense>
-          </div>
+        <div>
+          <Anchor id="Anchor_story" refprop={this.state.refs[1]} />
+          <Suspense
+            fallback={
+              <div
+                className="h5 bg--yellow"
+                style={{ display: "grid", placeContent: "center" }}
+              >
+                <h3>Loading ...</h3>
+                <Loader
+                  type="TailSpin"
+                  color="#cccccc"
+                  className=""
+                  visible={this.state.loaded ? false : true}
+                  height={100}
+                  width={100}
+                />
+              </div>
+            }
+          >
+            <Story />
+          </Suspense>
+          <Anchor id="Anchor_winery" refprop={this.state.refs[2]} />
+          <Suspense
+            fallback={
+              <div
+                className="h5 bg--yellow"
+                style={{ display: "grid", placeContent: "center" }}
+              >
+                <h3>Loading ...</h3>
+                <Loader
+                  type="TailSpin"
+                  color="#cccccc"
+                  className=""
+                  visible={this.state.loaded ? false : true}
+                  height={100}
+                  width={100}
+                />
+              </div>
+            }
+          >
+            <Winery />
+          </Suspense>
+          <Anchor id="Anchor_wines" refprop={this.state.refs[3]} />{" "}
+          <Suspense
+            fallback={
+              <div
+                className="h5 bg--yellow"
+                style={{ display: "grid", placeContent: "center" }}
+              >
+                <h3>Loading ...</h3>
+                <Loader
+                  type="TailSpin"
+                  color="#cccccc"
+                  className=""
+                  visible={this.state.loaded ? false : true}
+                  height={100}
+                  width={100}
+                />
+              </div>
+            }
+          >
+            <Wines refprop={this.state.refs[3]} className="wines" />
+          </Suspense>
+          <Anchor id="Anchor_contact" refprop={this.state.refs[4]} />
+          <Suspense
+            fallback={
+              <div
+                className="h5 bg--yellow"
+                style={{ display: "grid", placeContent: "center" }}
+              >
+                <h3>Loading ...</h3>
+                <Loader
+                  type="TailSpin"
+                  color="#cccccc"
+                  className=""
+                  visible={this.state.loaded ? false : true}
+                  height={100}
+                  width={100}
+                />
+              </div>
+            }
+          >
+            <Contact />
+          </Suspense>
+        </div>
         )}
       </div>
     );

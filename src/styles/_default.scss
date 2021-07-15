@@ -16,6 +16,9 @@ a {
 .bgblur {
   backdrop-filter: blur(10px);
 }
+.noscroll {
+  position: fixed;
+}
 
 .anchor {
   height: 0;

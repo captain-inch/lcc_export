@@ -34,10 +34,12 @@ export default class Hero extends Component {
 
   watchVideo(e) {
     this.setState({ videoLightbox: true });
+    document.body.style.overflow = "hidden"; // prevents scroll
   }
 
   stopVideo(e) {
     this.setState({ videoLightbox: false });
+    document.body.style.overflow = "visible"; // resumes scroll
   }
 
   async loadVideos() {
@@ -70,17 +72,16 @@ export default class Hero extends Component {
             }} // Triggers the loading of other components when first video is playing
           />
         </div>
-        {this.state.firstVideoLoaded ? (
-          <Typical
-            className={
-              "b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow " +
-              (this.state.videoLightbox ? "o-0" : "")
-            }
-            steps={coverText}
-            loop={Infinity}
-            wrapper="div"
-          />
-        ) : null}
+        <div className={this.state.videoLightbox ? "o-0" : ""}>
+          {this.state.firstVideoLoaded ? (
+            <Typical
+              className={"b tc1 bgt br3 pa2 coverText pa3 mt4-m textShadow "}
+              steps={coverText}
+              loop={Infinity}
+              wrapper="div"
+            />
+          ) : null}
+        </div>
         <div className="ctaContainer flex flex-column items-center flex-row-ns pb4 pb1-ns">
           <div
             key={0}

@@ -4,15 +4,11 @@ import { fullvideoURL } from "../../content/videos_content";
 // Render a YouTube video player
 
 export default class VideoLightbox extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div
         style={{ backdropFilter: "blur(5px)" }}
-        className="lightboxBg flex flex-column justify-center items-center db z-2 fixed pt5 top-0 left-0 w-100 vh-100 bg-black-60 "
+        className="lightboxBg noscroll flex flex-column justify-center items-center db z-2 fixed pt5 top-0 left-0 w-100 vh-100 bg-black-60 "
         onClick={(e) => this.props.closeCallback(e)}
       >
         <ReactPlayer light={false} url={fullvideoURL} />
@@ -29,7 +25,7 @@ export default class VideoLightbox extends Component {
                 width="24"
                 height="24"
                 fill="white"
-                class="bi bi-x-circle"
+                className="bi bi-x-circle"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />

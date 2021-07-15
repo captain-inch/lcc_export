@@ -1,9 +1,3 @@
-import trio from "./../media/img/team/trio.jpg";
-import michel from "./../media/img/team/michel.jpg";
-import xavier from "./../media/img/team/xavier.jpg";
-import francois from "./../media/img/team/francois.jpg";
-import fred from "./../media/img/team/fred.jpg";
-
 export const storyContent = {
   title: "From bicycling… to wine making!",
   body: [

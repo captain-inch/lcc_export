@@ -69,6 +69,7 @@ export default class Video extends Component {
           <div className="flex justify-center items-center">
             <img
               src={this.props.srcs[this.state.srcIndex1][1]}
+              alt={"background video preview while loading video"}
               id={"thumbnailPreview"}
             />
             <Loader

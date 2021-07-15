@@ -29,11 +29,13 @@ export default class MyGallery extends Component {
         lightboxActive: true,
         lightboxKey: key,
       });
+      document.body.style.overflow = "hidden"; // Prevent scroll
     } catch (e) {
       console.warn("Error opening image lightbox...", e);
     }
   }
   closeLightbox(e) {
+    document.body.style.overflow = "visible"; // Resumes scroll
     this.setState({ lightboxActive: false });
   }
   render() {
@@ -60,7 +62,7 @@ export default class MyGallery extends Component {
                     this.state.lightboxSrcs.length
                 ]
               }
-              onCloseRequest={() => this.setState({ lightboxActive: false })}
+              onCloseRequest={(e) => this.closeLightbox(e)}
               onMovePrevRequest={() =>
                 this.setState({
                   lightboxKey:

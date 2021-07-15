@@ -13,7 +13,7 @@ export const initAnimationsAnchor = (links, reactComponent) => {
 };
 
 export const initAnimationsWines = () => {
-  scrollTriggersWines([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+  scrollTriggersWines([0, 1, 2, 3, 4, 5, 6, 7]);
   ScrollTriggerItems(document.querySelectorAll(".sectionTitle"));
   ScrollTriggerItems(document.querySelectorAll(".sectionSubtitle"));
 };
@@ -34,8 +34,11 @@ const scrollTriggersAnchors = (routes, reactComponent) => {
   const triggerDown = (id, obj) => {
     // Action on navbar when scrolling down on an Anchor
     reactComponent.setState({ route: id });
+    console.log("trigger down " + id);
   };
   const triggerUp = (id) => {
+    console.log("trigger up");
+
     // Action on navbar when scrolling up on an Anchor
     try {
       reactComponent.setState({ route: routes[routes.indexOf(id) - 1] });
