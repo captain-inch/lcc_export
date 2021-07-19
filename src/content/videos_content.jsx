@@ -6,7 +6,7 @@ import i5 from "../media/vid/thumbnail_5.jpg";
 import i6 from "../media/vid/thumbnail_6.jpg";
 import i7 from "../media/vid/thumbnail_7.jpg";
 
-const youtube = "https://www.youtube.com/watch?v=mhfsFSSxprw";
+const youtube = "https://youtu.be/p8eM7RrDK-Q";
 const v1 =
   "https://github.com/captain-inch/lcc_export/blob/main/src/media/vid/Clip_1.m4v?raw=true";
 const v2 =

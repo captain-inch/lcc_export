@@ -5,11 +5,16 @@ import {
   winesList,
   winesOverview,
   wineIcon,
+  titles,
 } from "../../content/wines_content.jsx";
 import { initAnimationsWines } from "../animations.js";
 import ReadMoreReact from "read-more-react";
 import Testimonial from "./testimonial.jsx";
-import { testimonials } from "../../content/testimonials_content.jsx";
+import {
+  testimonials,
+  reviewers,
+  testimonialHeader,
+} from "../../content/testimonials_content.jsx";
 
 const minimumLength = 100;
 const idealLength = 150;
@@ -71,7 +76,7 @@ export default class Wines extends Component {
                   alt={val.title}
                 />
                 <h2
-                  className="pa1 no-underline pointer h3-ns mt0 mb5-ns mb2"
+                  className="pa1 no-underline pointer h3-ns mt2 mb5-ns mb2"
                   i={acc.length}
                 >
                   {val.title}
@@ -91,7 +96,7 @@ export default class Wines extends Component {
                   <span className="pr2 nowrap tc ">See wines</span>
                   <span className="w3 ">{wineIcon}</span>
                 </div>
-                <div className="pa1 mt0 tc i mb5 mb2-ns">
+                <div className="pa1 mt0 tc i mb5 mb2-ns pl3 pr3 tj">
                   <ReadMoreReact
                     text={val.text}
                     min={minimumLength}
@@ -106,7 +111,8 @@ export default class Wines extends Component {
             return acc;
           }, [])}
         </div>
-        <div className="flex flex-column flex-row-l items-center">
+        {/* ===== TESTIMONIALS ===== */}
+        <div className="flex flex-column flex-row-l items-center justify-center">
           {testimonials.reduce((acc, val) => {
             acc.push(
               <Testimonial data={val} key={"testimonial_" + acc.length} />
@@ -114,36 +120,44 @@ export default class Wines extends Component {
             return acc;
           }, [])}
         </div>
-        <Anchor refprop={this.state.refs[0]} />
+        <h3>{testimonialHeader}</h3>
+        <div className="flex justify-center">
+          <div className="mw6 mw7-m mw8-l flex flex-wrap flex-row-ns justify-center items-center ">
+            {reviewers.reduce((acc, val) => {
+              acc.push(
+                <img className="mh2 mw4 pa2" src={val.img} alt={val.alt} />
+              );
+              return acc;
+            }, [])}
+          </div>
+        </div>
+        {/* ===== WINES DETAILS ===== */}
+        <Anchor refprop={this.state.refs[1]} />
         <div>
           <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
-            Minervois La Livinière
+            {titles[1]}
           </h2>
           <div id="wineList" className="mt5 mb5">
-            <Wine
-              id={0}
-              content={winesList[0]}
-              metaTitle={"Minervois La Livinière"}
-            />
+            <Wine id={0} content={winesList[0]} metaTitle={titles[1]} />
             <Wine id={1} content={winesList[1]} />
             <Wine id={2} content={winesList[2]} />{" "}
           </div>
-          <Anchor refprop={this.state.refs[1]} />
+          <Anchor refprop={this.state.refs[0]} />
 
           <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
-            Minervois Rouge
+            {titles[0]}
           </h2>
           <div id="wineList" className="mt5 mb5">
-            <Wine id={3} content={winesList[3]} metaTitle={"Minervois Rouge"} />
+            <Wine id={3} content={winesList[3]} metaTitle={titles[0]} />
             <Wine id={4} content={winesList[4]} />
             <Wine id={5} content={winesList[5]} />
           </div>
           <Anchor refprop={this.state.refs[2]} />
           <h2 className="wineHeaderText mt5 pa5 tc cf1-ns b underline">
-            Others
+            {titles[2]}
           </h2>
           <div id="wineList" className="mt5 mb5">
-            <Wine id={6} content={winesList[6]} metaTitle={"Others"} />
+            <Wine id={6} content={winesList[6]} metaTitle={titles[2]} />
             <Wine id={7} content={winesList[7]} />
           </div>
         </div>

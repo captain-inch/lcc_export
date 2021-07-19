@@ -1,7 +1,7 @@
-//import organic from "./../media/img/misc/organic.jpg";
+import quality from "./../media/img/misc/quality.jpg";
 import cellar from "./../media/img/misc/cellar.jpg";
 import making from "./../media/img/misc/making.jpg";
-import spirit from "./../media/img/misc/spirit.jpg";
+import organic from "./../media/img/misc/organic.jpg";
 import terroirs from "./../media/img/misc/terroirs.jpg";
 
 export const winery_title = "AN EXCEPTIONAL VINEYARD";
@@ -12,16 +12,15 @@ export const winery_content = [
     text: "Domaine Michelin’s uniqueness lies in the quality of the soil where the winery is established:  small hidden valleys (“combes”), located on the “Causse de Minerve” in the middle of the garrigue, on the southern slopes of the rugged, bushy Montagne Noire, facing the Pyrenees’ Mountain. Our vines swirl down the hills, well drained and exposed, planted in clay and limestone soils, covered by gravels. \nOur vines are spread out in not less than 18 different sites, on the slopes and terraces of the Montagne Noire… and it takes hours to tour them by car! We have purchased them from different owners, tired of operating small and remote plots, and have gathered them to create the Domaine Michelin. Our idea: diversity and quality! Each plot brings its own personality and specific touch in final wine blend.\nOn average, our vines are 25 years old, with some very old Carignan (1953, 1969).",
   },
   {
-    headerText: "Nature as a spirit",
-    img: spirit,
-    text: "Our goal is simple: produce high-quality wines, with a strong personality and an absolute respect for our precious environment. We believe it is the only way a terroir can express all its potential. So of course, right from the beginning, the Domaine Michelin - Les Combes Cachées has been conducted in an organic mode. We have never used any chemical products neither in the vine, nor in the cellar. We obtained the official organic label for all our products in 2018.\nWe search the highest quality in every step of our wine making process: \n-	Vine pruning is adapted to each plot and vine type.\n-	Harvest dates are decided plot per plot, according to the ideal maturity of grapes. \n-	Grapes are handpicked, and carefully selected directly on the plot, and then at the cellar, using a sophisticated sorting table. \n-	Vinification is made plot per plot, with dedicated tanks, looking for ultimate expression of terroirs.\n-	Aging is adapted to the wine style: stainless steel for Minervois and Whites, oak barrels for Livinière. \n-	Blend is made at the end of the aging process, 18 to 24 months after harvest for Livinière. It consists in a very thorough tasting process of each tank and every barrel…  always searching for the best balance, the finest flavors, and the highest quality.",
+    headerText: "Quality as a spirit",
+    img: quality,
+    text: "We search the highest quality in every step of our wine making process: \n-	Vine pruning is adapted to each plot and vine type.\n-	Harvest dates are decided plot per plot, according to the ideal maturity of grapes. \n-	Grapes are handpicked, and carefully selected directly on the plot, and then at the cellar, using a sophisticated sorting table. \n-	Vinification is made plot per plot, with dedicated tanks, looking for ultimate expression of terroirs.\n-	Aging is adapted to the wine style: stainless steel for Minervois and Whites, oak barrels for Livinière. \n-	Blend is made at the end of the aging process, 18 to 24 months after harvest for Livinière. It consists in a very thorough tasting process of each tank and every barrel…  always searching for the best balance, the finest flavors, and the highest quality.",
   },
-  // {
-  //   headerText: "Organic",
-  //   img: organic,
-
-  //   text: "Organic since ever. Certified since 2018. Organic: an evidence.",
-  // },
+  {
+    headerText: "Organic by conviction",
+    img: organic,
+    text: "Our goal is simple: produce high-quality wines, with a strong personality and an absolute respect for our precious environment. We believe it is the only way a terroir can express all its potential. So of course, right from the beginning, the Domaine Michelin - Les Combes Cachées has been conducted in an organic mode. We have never used any chemical products neither in the vine, nor in the cellar. We obtained the official organic label for all our products in 2018.",
+  },
   {
     headerText: "A state-of-the-art cellar",
     img: cellar,

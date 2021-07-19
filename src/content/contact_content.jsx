@@ -1,5 +1,5 @@
 import logo from "./../media/img/misc/Logo Michelin carré 600x600.png";
-import confrerie from "./../media/img/misc/logo_confreriedesdomaines.png";
+import confrerie from "./../media/img/misc/logo_confreriedesdomaines.jpg";
 export const content = [
   {
     title: "La confrérie des domaines",
@@ -47,4 +47,4 @@ export const content = [
 ];
 
 export const websiteCreatorText = "Website created by Webmeo.";
-export const websiteCreatorUrl = "www.webmeo.fr";
+export const websiteCreatorUrl = "https://webmeo.fr/";

@@ -22,7 +22,7 @@ export const winesList = [
     img: troisecus,
   },
   {
-    headerText: "Minervois La Livinière - Les 3 écus",
+    headerText: "Générations",
     text: "Générations is the brand name for our “Tête de Cuvée”. The most outstanding wine we can produce for a given vintage. The final name of the Cuvée depends on the year. “Axel” (2015), “Elias” (2016), “Yuna” (2017), “Malone” (2018), “Anouk” (2020). These are the names of our grandsons and granddaughters, born these last years. Lucky us… \nThis Cuvée is the selection, each year, of the very best barrels of the vintage in very limited volumes: 800 to 1000 bottles only. At the end of the aging of the vintage, we taste individually each barrel. And every year, we find gems: some of the barrels are exceptional and allow to produce a top-quality blend. Générations Cuvée is therefore a very unique Cuvée, different every year, every year at the top.",
     img: generations,
   },
@@ -52,19 +52,23 @@ export const winesList = [
     img: rose,
   },
 ];
-
+export const titles = ["Minervois", "Cru La Livinière", "Others"];
 export const winesOverview = [
   {
-    img: overview_1,
-    title: "Whites",
-    text: "",
+    img: overview_3,
+    title: titles[0],
+    text: "Two different Cuvées of Minervois AOP, two different styles, each one has its own specific profile.",
   },
   {
     img: overview_2,
-    title: "Minervois La Livinière",
-    text: "",
+    title: titles[1],
+    text: "Three different Cuvées of Cru La Livinière AOP, three different styles. No risk to confuse them, each one has its own specific profile.",
   },
-  { img: overview_3, title: "Red", text: "" },
+  {
+    img: overview_1,
+    title: titles[2],
+    text: "White wines and small cuvées.",
+  },
 ];
 
 export const wineIcon = (

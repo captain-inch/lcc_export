@@ -1,5 +1,5 @@
 export const coverText = [
-  "Organic winery at the heart of Minervois",
+  "Organic winery at the heart of Languedoc",
   3000,
   "Quality-driven",
   2500,
