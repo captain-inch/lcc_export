@@ -56,23 +56,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Bebas Neue", cursive;
-  letter-spacing: 0.25rem;
+  font-family: "Patua One", "Bebas Neue", cursive;
+  text-transform: none !important;
   text-align: center;
 }
-
 h1 {
-  font-size: 5rem;
+  font-size: 6rem;
+  letter-spacing: 0.15rem;
   text-decoration: underline;
 }
 h2 {
-  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-size: 3.8rem;
 }
 h3 {
-  font-size: 2.4rem;
+  letter-spacing: 0.05rem;
+
+  font-size: 2.8rem;
 }
 h4 {
-  font-size: 1.75rem;
+  font-size: 1.9rem;
 }
 
 .h6 {

@@ -45,6 +45,8 @@ export default class Hero extends Component {
   async loadVideos() {
     // Propre way to use async with await and without .then
     const res = await import("../../content/videos_content.jsx");
+    console.log("local video : ");
+    console.log(res.localVideoTest);
     this.setState({ srcs: this.shuffle(res.bgvideos) });
   }
   componentDidMount() {

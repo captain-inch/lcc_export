@@ -4,7 +4,7 @@ import making from "./../media/img/misc/making.jpg";
 import organic from "./../media/img/misc/organic.jpg";
 import terroirs from "./../media/img/misc/terroirs.jpg";
 
-export const winery_title = "AN EXCEPTIONAL VINEYARD";
+export const winery_title = "An exceptional vineyard";
 export const winery_content = [
   {
     headerText: "A terroir like no other",

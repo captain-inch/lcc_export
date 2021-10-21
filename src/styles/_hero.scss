@@ -22,8 +22,6 @@
   object-fit: cover;
 }
 #coverText {
-  font-size: 5rem;
-  font-family: "Bebas Neue", cursive;
   letter-spacing: 0.5rem;
   position: absolute;
   max-width: 70vw;
@@ -32,8 +30,8 @@
 }
 
 .coverText {
-  font-size: min(15vh, 11vw);
-  font-family: "Bebas Neue", cursive;
+  font-family: "Patua One", "Bebas Neue", cursive;
+  font-size: min(11vh, 8.2vw);
   font-weight: 1;
   letter-spacing: 0.5rem;
   position: absolute;

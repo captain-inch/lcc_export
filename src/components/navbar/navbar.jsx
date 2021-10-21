@@ -35,14 +35,16 @@ export default class Navbar extends Component {
       >
         <div className="flex flex-column-m justify-between-l">
           <a href="#home" className="flex-m justify-center-m">
-            <img
-              className="mr0-m ml0-m h3"
-              src={this.props.logo}
-              alt="Logo Domaine Michelin"
-              onClick={(e) =>
-                this.menuClick(e, document.getElementById("root"), "home")
-              }
-            ></img>
+            <h1 className="ma0">
+              <img
+                className="mr0-m ml0-m h3"
+                src={this.props.logo}
+                alt="Domaine Michelin - Les Combes Cachées - Organic wineyard in Minervois"
+                onClick={(e) =>
+                  this.menuClick(e, document.getElementById("root"), "home")
+                }
+              ></img>
+            </h1>
           </a>
           <div
             className="hamburger db dn-ns self-center pa3"

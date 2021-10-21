@@ -1,5 +1,6 @@
-import img from "./../media/img/misc/logowhite.png";
-export const logo = img;
+import logo1 from "./../media/img/misc/logowhite.png";
+export const logo = logo1;
+
 export const links = [
   { text: "Home", route: "home", active: "home" },
 

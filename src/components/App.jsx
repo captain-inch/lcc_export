@@ -140,7 +140,6 @@ export default class App extends Component {
             <Contact />
           </Suspense>
         </div>
-        )}
       </div>
     );
   }

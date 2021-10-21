@@ -26,9 +26,9 @@ export const content = [
   {
     title: "Domaine Michelin - Les Combes Cachees",
     logo: logo,
-    text: "For any inquiry, adress us an email to lescombescachees@gmail.com.",
+    text: "For any inquiry, adress us an email to domainemichelin@gmail.com.",
     button: {
-      href: "mailto:lescombescachees@gmail.com",
+      href: "mailto:domainemichelin@gmail.com",
       text: "Email us",
       icon: (
         <svg

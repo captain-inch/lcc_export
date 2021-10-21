@@ -10,7 +10,7 @@ import group from "./../media/img/team/family.jpg";
 
 export const teamHeader = {
   img: trio,
-  title: "A STORY OF PASSION",
+  title: "A story of passion",
 };
 export const teamDetail = [
   {

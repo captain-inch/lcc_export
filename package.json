@@ -1,6 +1,6 @@
 {
-  "homepage": ".",
-  "name": "lcc_export",
+  "homepage": "https://domaine-michelin.fr/",
+  "name": "domaine_michelin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
