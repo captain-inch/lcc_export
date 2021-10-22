@@ -1,13 +1,21 @@
-import trio from "./../media/img/team/trio.jpg";
-import michel from "./../media/img/team/michel.jpg";
-import xavier from "./../media/img/team/xavier.jpg";
-import francois from "./../media/img/team/francois.jpg";
-import fred from "./../media/img/team/fred.jpg";
-import nicolasT from "./../media/img/team/nicolasT.jpg";
-import nicolasD from "./../media/img/team/nicolasD.jpg";
-import paula from "./../media/img/team/paula.jpg";
-import group from "./../media/img/team/family.jpg";
-
+// import trio from "./../media/img/team/trio.jpg";
+// import michel from "./../media/img/team/michel.jpg";
+// import xavier from "./../media/img/team/xavier.jpg";
+// import francois from "./../media/img/team/francois.jpg";
+// import fred from "./../media/img/team/fred.jpg";
+// import nicolasT from "./../media/img/team/nicolasT.jpg";
+// import nicolasD from "./../media/img/team/nicolasD.jpg";
+// import paula from "./../media/img/team/paula.jpg";
+// import group from "./../media/img/team/family.jpg";
+import trio from "./../media/img/team/trio.webp";
+import michel from "./../media/img/team/michel.webp";
+import xavier from "./../media/img/team/xavier.webp";
+import francois from "./../media/img/team/francois.webp";
+import fred from "./../media/img/team/fred.webp";
+import nicolasT from "./../media/img/team/nicolasT.webp";
+import nicolasD from "./../media/img/team/nicolasD.webp";
+import paula from "./../media/img/team/paula.webp";
+import group from "./../media/img/team/family.webp";
 export const teamHeader = {
   img: trio,
   title: "A story of passion",

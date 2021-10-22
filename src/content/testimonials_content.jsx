@@ -1,9 +1,15 @@
-import decanter from "./../media/img/misc/decanter_logo.jpg";
-import parker from "./../media/img/misc/parker_wine_advocate_logo.jpg";
-import winespectator from "./../media/img/misc/winespectator.jpg";
-import rvf from "./../media/img/misc/rvf.png";
-import bettane from "./../media/img/misc/bettane.jpg";
-import vif from "./../media/img/misc/vif_gold.png";
+// import decanter from "./../media/img/misc/decanter_logo.jpg";
+// import parker from "./../media/img/misc/parker_wine_advocate_logo.jpg";
+// import winespectator from "./../media/img/misc/winespectator.jpg";
+// import rvf from "./../media/img/misc/rvf.png";
+// import bettane from "./../media/img/misc/bettane.jpg";
+// import vif from "./../media/img/misc/vif_gold.png";
+import decanter from "./../media/img/misc/decanter_logo.webp";
+import parker from "./../media/img/misc/parker_wine_advocate_logo.webp";
+import winespectator from "./../media/img/misc/winespectator.webp";
+import rvf from "./../media/img/misc/rvf.webp";
+import bettane from "./../media/img/misc/bettane.webp";
+import vif from "./../media/img/misc/vif_gold.webp";
 
 export const testimonialHeader = "They talk about us ...";
 export const reviewers = [

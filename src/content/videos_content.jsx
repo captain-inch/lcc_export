@@ -1,10 +1,17 @@
-import i1 from "../media/vid/thumbnail_1.jpg";
-import i2 from "../media/vid/thumbnail_2.jpg";
-import i3 from "../media/vid/thumbnail_3.jpg";
-import i4 from "../media/vid/thumbnail_4.jpg";
-import i5 from "../media/vid/thumbnail_5.jpg";
-import i6 from "../media/vid/thumbnail_6.jpg";
-import i7 from "../media/vid/thumbnail_7.jpg";
+// import i1 from "../media/vid/thumbnail_1.jpg";
+// import i2 from "../media/vid/thumbnail_2.jpg";
+// import i3 from "../media/vid/thumbnail_3.jpg";
+// import i4 from "../media/vid/thumbnail_4.jpg";
+// import i5 from "../media/vid/thumbnail_5.jpg";
+// import i6 from "../media/vid/thumbnail_6.jpg";
+// import i7 from "../media/vid/thumbnail_7.jpg";
+import i1 from "../media/vid/thumbnail_1.webp";
+import i2 from "../media/vid/thumbnail_2.webp";
+import i3 from "../media/vid/thumbnail_3.webp";
+import i4 from "../media/vid/thumbnail_4.webp";
+import i5 from "../media/vid/thumbnail_5.webp";
+import i6 from "../media/vid/thumbnail_6.webp";
+import i7 from "../media/vid/thumbnail_7.webp";
 
 import v1 from "../media/vid/clip_1.m4v";
 import v2 from "../media/vid/clip_2.m4v";

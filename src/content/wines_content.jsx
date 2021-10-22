@@ -1,14 +1,25 @@
-import soleilrouge from "./../media/img/wines/MLL SR.png";
-import troisecus from "./../media/img/wines/MLL_Michelin_3ecus.png";
-import generations from "./../media/img/wines/MLL_Michelin_Elias.png";
-import curiosite from "./../media/img/wines/MR CL.png";
-import hautsdesiran from "./../media/img/wines/MR_Michelin_HDS.png";
-import combeviolon from "./../media/img/wines/MB CV.png";
-import viognier from "./../media/img/wines/VIO LM.png";
-import rose from "./../media/img/wines/ROSE PF.png";
-import overview_1 from "./../media/img/wines/overview_1.jpg";
-import overview_2 from "./../media/img/wines/overview_2.jpg";
-import overview_3 from "./../media/img/wines/overview_3.jpg";
+// import troisecus from "./../media/img/wines/MLL_Michelin_3ecus.png";
+// import generations from "./../media/img/wines/MLL_Michelin_Elias.png";
+// import soleilrouge from "./../media/img/wines/MLL SR.png";
+// import curiosite from "./../media/img/wines/MR CL.png";
+// import hautsdesiran from "./../media/img/wines/MR_Michelin_HDS.png";
+// import combeviolon from "./../media/img/wines/MB CV.png";
+// import viognier from "./../media/img/wines/VIO LM.png";
+// import rose from "./../media/img/wines/ROSE PF.png";
+// import overview_1 from "./../media/img/wines/overview_1.jpg";
+// import overview_2 from "./../media/img/wines/overview_2.jpg";
+// import overview_3 from "./../media/img/wines/overview_3.jpg";
+import soleilrouge from "./../media/img/wines/MLL SR.webp";
+import troisecus from "./../media/img/wines/MLL_Michelin_3ecus.webp";
+import generations from "./../media/img/wines/MLL_Michelin_Elias.webp";
+import curiosite from "./../media/img/wines/MR CL.webp";
+import hautsdesiran from "./../media/img/wines/MR_Michelin_HDS.webp";
+import combeviolon from "./../media/img/wines/MB CV.webp";
+import viognier from "./../media/img/wines/VIO LM.webp";
+import rose from "./../media/img/wines/ROSE PF.webp";
+import overview_1 from "./../media/img/wines/overview_1.webp";
+import overview_2 from "./../media/img/wines/overview_2.webp";
+import overview_3 from "./../media/img/wines/overview_3.webp";
 
 export const winesList = [
   {

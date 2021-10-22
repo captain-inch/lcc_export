@@ -51,7 +51,7 @@ export default class Winery extends Component {
                   {val.headerText}
                 </h4>
                 <div className="w5 h5 overflow-hidden flex flex-column justify-center">
-                  <img className="grow" src={val.img} alt={val.name} />
+                  <img className="grow" src={val.img} alt={val.alt} />
                 </div>
                 <div className="tj mt3 prewrap">
                   <ReadMoreReact
